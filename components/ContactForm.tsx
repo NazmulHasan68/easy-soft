@@ -46,8 +46,8 @@ export default function ContactForm() {
         animate={{ opacity: 1, scale: 1 }}
         className="flex flex-col items-center justify-center py-16 text-center"
       >
-        <div className="w-16 h-16 rounded-full bg-green-500/15 border border-[#81fA00]/30 flex items-center justify-center mb-5">
-          <CheckCircle size={32} className="text-green-400 " />
+        <div className="w-16 h-16 rounded-full bg-[#81fa00]/70 /15 border border-[#81fA00]/30 flex items-center justify-center mb-5">
+          <CheckCircle size={32} className="text-[#81fa00]  " />
         </div>
         <h3 className="text-2xl font-bold text-white mb-3">Message Sent!</h3>
         <p className="text-gray-400 max-w-xs">
@@ -55,7 +55,7 @@ export default function ContactForm() {
         </p>
         <button
           onClick={() => setSubmitted(false)}
-          className="mt-8 px-6 py-2.5 rounded-full border border-[#81fA00]/30 text-green-400 text-sm hover:bg-green-500/10 transition-all"
+          className="mt-8 px-6 py-2.5 rounded-full border border-[#81fA00]/30 text-[#81fa00]  text-sm hover:bg-[#81fa00]/70 /10 transition-all"
         >
           Send Another Message
         </button>
@@ -75,7 +75,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             placeholder="John"
-            className="w-full px-4 py-3 rounded-xl bg-[#f2f2f2]/5 border border-white/10 text-white placeholder-gray-600 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-green-500/20 focus:outline-none transition-all text-sm"
+            className="w-full px-4 py-3 rounded-xl bg-[#f2f2f2]/5 border border-white/10 text-white placeholder-gray-600 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-[#81fa00]/70 /20 focus:outline-none transition-all text-sm"
           />
         </div>
         <div>
@@ -87,7 +87,7 @@ export default function ContactForm() {
             onChange={handleChange}
             required
             placeholder="john@company.com"
-            className="w-full px-4 py-3 rounded-xl bg-[#f2f2f2]/5 border border-white/10 text-white placeholder-gray-600 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-green-500/20 focus:outline-none transition-all text-sm"
+            className="w-full px-4 py-3 rounded-xl bg-[#f2f2f2]/5 border border-white/10 text-white placeholder-gray-600 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-[#81fa00]/70 /20 focus:outline-none transition-all text-sm"
           />
         </div>
       </div>
@@ -101,7 +101,7 @@ export default function ContactForm() {
             value={formData.companyName}
             onChange={handleChange}
             placeholder="Acme Corp"
-            className="w-full px-4 py-3 rounded-xl bg-[#f2f2f2]/5 border border-white/10 text-white placeholder-gray-600 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-green-500/20 focus:outline-none transition-all text-sm"
+            className="w-full px-4 py-3 rounded-xl bg-[#f2f2f2]/5 border border-white/10 text-white placeholder-gray-600 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-[#81fa00]/70 /20 focus:outline-none transition-all text-sm"
           />
         </div>
         <div>
@@ -110,7 +110,7 @@ export default function ContactForm() {
             name="projectBudget"
             value={formData.projectBudget}
             onChange={handleChange}
-            className="w-full px-4 py-3 rounded-xl bg-[#0F2318] border border-white/10 text-gray-300 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-green-500/20 focus:outline-none transition-all text-sm"
+            className="w-full px-4 py-3 rounded-xl bg-[#0F2318] border border-white/10 text-gray-300 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-[#81fa00]/70 /20 focus:outline-none transition-all text-sm"
           >
             <option value="">Select budget range</option>
             <option value="under-5k">Under $5,000</option>
@@ -130,14 +130,14 @@ export default function ContactForm() {
           required
           rows={5}
           placeholder="Tell us about your project, goals, and any specific requirements..."
-          className="w-full px-4 py-3 rounded-xl bg-[#f2f2f2]/5 border border-white/10 text-white placeholder-gray-600 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-green-500/20 focus:outline-none transition-all text-sm resize-none"
+          className="w-full px-4 py-3 rounded-xl bg-[#f2f2f2]/5 border border-white/10 text-white placeholder-gray-600 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-[#81fa00]/70 /20 focus:outline-none transition-all text-sm resize-none"
         />
       </div>
 
       <button
         type="submit"
         disabled={loading}
-        className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-green-500 hover:bg-green-400 disabled:bg-green-500/50 text-black font-semibold text-sm rounded-full transition-all duration-200 shadow-lg shadow-green-500/25"
+        className="w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#81fa00]/70  hover:bg-[#81fa00]  disabled:bg-[#81fa00]/70 /50 text-black font-semibold text-sm rounded-full transition-all duration-200 shadow-lg shadow-[#81fa00]/70 /25"
       >
         {loading ? (
           <>

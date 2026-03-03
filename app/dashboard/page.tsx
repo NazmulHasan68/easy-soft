@@ -18,7 +18,7 @@ import {
 } from 'lucide-react'
 
 const statCards = [
-  { label: 'Total Revenue', value: '$248,500', change: '+12.5%', up: true, icon: DollarSign, color: 'text-green-400 ' },
+  { label: 'Total Revenue', value: '$248,500', change: '+12.5%', up: true, icon: DollarSign, color: 'text-[#81fa00]  ' },
   { label: 'Active Projects', value: '14', change: '+3', up: true, icon: FolderOpen, color: 'text-blue-400' },
   { label: 'Total Clients', value: '89', change: '+7', up: true, icon: Users, color: 'text-purple-400' },
   { label: 'Avg. Delivery Time', value: '5.2 wks', change: '-0.8 wks', up: false, icon: Clock, color: 'text-orange-400' },
@@ -33,7 +33,7 @@ const recentProjects = [
 ]
 
 const statusConfig = {
-  Completed: { icon: CheckCircle, class: 'text-green-400 bg-green-500/10 border-[#81fA00]/20' },
+  Completed: { icon: CheckCircle, class: 'text-[#81fa00]  bg-[#81fa00]/70 /10 border-[#81fA00]/20' },
   'In Progress': { icon: Loader, class: 'text-blue-400 bg-blue-500/10 border-blue-500/20' },
   Review: { icon: AlertCircle, class: 'text-orange-400 bg-orange-500/10 border-orange-500/20' },
 }
@@ -64,9 +64,9 @@ export default function DashboardPage() {
             />
           </div>
           <div className="flex items-center gap-3">
-            <button className="relative w-8 h-8 rounded-full bg-[#0F2318] border border-[#81fA00]/15 flex items-center justify-center text-gray-400 hover:text-green-400 transition-colors">
+            <button className="relative w-8 h-8 rounded-full bg-[#0F2318] border border-[#81fA00]/15 flex items-center justify-center text-gray-400 hover:text-[#81fa00]  transition-colors">
               <Bell size={15} />
-              <span className="absolute top-0.5 right-0.5 w-2 h-2 rounded-full bg-green-500" />
+              <span className="absolute top-0.5 right-0.5 w-2 h-2 rounded-full bg-[#81fa00]/70 " />
             </button>
             <div className="w-8 h-8 rounded-full bg-blue-400 border-2 border-[#81fA00]/30 flex items-center justify-center text-black text-xs font-bold">
               A
@@ -96,7 +96,7 @@ export default function DashboardPage() {
                   <div className={`w-9 h-9 rounded-xl bg-[#f2f2f2]/5 border border-white/10 flex items-center justify-center ${stat.color}`}>
                     <stat.icon size={17} />
                   </div>
-                  <span className={`flex items-center gap-1 text-xs font-semibold ${stat.up ? 'text-green-400' : 'text-red-400'}`}>
+                  <span className={`flex items-center gap-1 text-xs font-semibold ${stat.up ? 'text-[#81fa00] ' : 'text-red-400'}`}>
                     {stat.up ? <TrendingUp size={12} /> : <TrendingDown size={12} />}
                     {stat.change}
                   </span>
@@ -161,7 +161,7 @@ export default function DashboardPage() {
                   <div key={i} className="flex items-start gap-3">
                     <div
                       className={`w-2 h-2 rounded-full mt-1.5 flex-shrink-0 ${
-                        item.type === 'success' ? 'bg-green-500' : 'bg-blue-400'
+                        item.type === 'success' ? 'bg-[#81fa00]/70 ' : 'bg-blue-400'
                       }`}
                     />
                     <div>

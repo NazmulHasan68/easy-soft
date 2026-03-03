@@ -5,7 +5,7 @@ import { Target, Eye, Heart, Award, Users, Code2, Globe } from 'lucide-react'
 
 const team = [
   { name: 'Alex Rivera', role: 'CEO & Founder', color: 'bg-blue-400' },
-  { name: 'Sarah Chen', role: 'CTO', color: 'bg-green-400' },
+  { name: 'Sarah Chen', role: 'CTO', color: 'bg-[#81fa00] ' },
   { name: 'Marcus Webb', role: 'Head of Design', color: 'bg-orange-400' },
   { name: 'Priya Sharma', role: 'Lead Engineer', color: 'bg-purple-400' },
   { name: 'Tom Bradley', role: 'DevOps Lead', color: 'bg-red-400' },
@@ -38,7 +38,7 @@ export default function AboutPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <span className="section-label">About Us</span>
             <h1 className="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
-              We Are <span className="text-green-400">EasySoft</span>
+              We Are <span className="text-[#81fa00] ">EasySoft</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
               A team of passionate engineers, designers, and strategists building the future of software — one innovative solution at a time.
@@ -54,7 +54,7 @@ export default function AboutPage() {
             <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <span className="section-label">Our Story</span>
               <h2 className="text-4xl font-black text-[#131313] dark:text-white mb-6">
-                Built to Solve <em className="italic font-serif text-green-400 ">Real Problems</em>
+                Built to Solve <em className="italic font-serif text-[#81fa00]  ">Real Problems</em>
               </h2>
               <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
                 <p>Founded in 2016, EasySoft began with a simple belief: great software should be accessible to businesses of all sizes. What started as a two-person consultancy has grown into a 50+ member team serving clients across 20 countries.</p>
@@ -75,7 +75,7 @@ export default function AboutPage() {
                 { icon: Award, value: '8+', label: 'Industry Awards' },
               ].map(({ icon: Icon, value, label }, i) => (
                 <div key={i} className="bg-gray-50 dark:bg-[#0F2318] rounded-2xl p-6 border border-gray-200 dark:border-[#81fA00]/10 text-center">
-                  <Icon size={24} className="text-green-400  mx-auto mb-3" />
+                  <Icon size={24} className="text-[#81fa00]   mx-auto mb-3" />
                   <div className="text-3xl font-black text-[#131313] dark:text-white">{value}</div>
                   <div className="text-sm text-gray-500 mt-1">{label}</div>
                 </div>
@@ -91,7 +91,7 @@ export default function AboutPage() {
           <div className="text-center mb-14">
             <span className="section-label">Our Values</span>
             <h2 className="text-4xl font-black text-[#131313] dark:text-white">
-              Principles That <em className="italic font-serif text-green-400 ">Guide Us</em>
+              Principles That <em className="italic font-serif text-[#81fa00]  ">Guide Us</em>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -105,8 +105,8 @@ export default function AboutPage() {
                 whileHover={{ y: -5 }}
                 className="bg-[#f2f2f2] dark:bg-[#0c2501] rounded-2xl p-6 border border-gray-200 dark:border-[#81fA00]/10 hover:border-[#81fA00]/30 transition-all"
               >
-                <div className="w-12 h-12 rounded-xl bg-green-500/10 border border-[#81fA00]/20 flex items-center justify-center mb-5">
-                  <v.icon size={22} className="text-green-400 " />
+                <div className="w-12 h-12 rounded-xl bg-[#81fa00]/70 /10 border border-[#81fA00]/20 flex items-center justify-center mb-5">
+                  <v.icon size={22} className="text-[#81fa00]  " />
                 </div>
                 <h3 className="font-bold text-[#131313] dark:text-white mb-3">{v.title}</h3>
                 <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{v.desc}</p>
@@ -122,11 +122,11 @@ export default function AboutPage() {
           <div className="text-center mb-14">
             <span className="section-label">Our Journey</span>
             <h2 className="text-4xl font-black text-[#131313] dark:text-white">
-              Milestones That <em className="italic font-serif text-green-400 ">Shaped Us</em>
+              Milestones That <em className="italic font-serif text-[#81fa00]  ">Shaped Us</em>
             </h2>
           </div>
           <div className="relative">
-            <div className="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 top-0 bottom-0 w-px bg-green-500/20" />
+            <div className="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 top-0 bottom-0 w-px bg-[#81fa00]/70 /20" />
             <div className="flex flex-col gap-10">
               {milestones.map((m, i) => (
                 <motion.div
@@ -138,11 +138,11 @@ export default function AboutPage() {
                 >
                   <div className={`sm:w-1/2 ${i % 2 === 0 ? 'sm:pr-10 sm:text-right' : 'sm:pl-10'} pl-10 sm:pl-0`}>
                     <div className="bg-gray-50 dark:bg-[#0F2318] rounded-xl p-4 border border-gray-200 dark:border-[#81fA00]/10">
-                      <span className="text-green-400  font-black text-lg block mb-1">{m.year}</span>
+                      <span className="text-[#81fa00]   font-black text-lg block mb-1">{m.year}</span>
                       <p className="text-gray-600 dark:text-gray-400 text-sm">{m.event}</p>
                     </div>
                   </div>
-                  <div className="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-green-500 border-2 border-[#0c2501] mt-4" />
+                  <div className="absolute left-4 sm:left-1/2 sm:-translate-x-1/2 w-3 h-3 rounded-full bg-[#81fa00]/70  border-2 border-[#0c2501] mt-4" />
                   <div className="hidden sm:block sm:w-1/2" />
                 </motion.div>
               ))}
@@ -157,7 +157,7 @@ export default function AboutPage() {
           <div className="text-center mb-14">
             <span className="section-label">The Team</span>
             <h2 className="text-4xl font-black text-[#131313] dark:text-white">
-              Meet the <em className="italic font-serif text-green-400 ">Builders</em>
+              Meet the <em className="italic font-serif text-[#81fa00]  ">Builders</em>
             </h2>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">

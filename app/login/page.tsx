@@ -30,7 +30,7 @@ export default function LoginPage() {
           backgroundSize: '40px 40px',
         }}
       />
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-green-500/5 blur-[120px] pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-[#81fa00]/70 /5 blur-[120px] pointer-events-none" />
 
       <motion.div
         initial={{ opacity: 0, y: 30 }}
@@ -38,11 +38,11 @@ export default function LoginPage() {
         className="relative w-full max-w-md"
       >
         {/* Card */}
-        <div className="bg-[#0F2318] rounded-2xl border border-[#81fA00]/15 p-8 shadow-2xl shadow-green-500/10">
+        <div className="bg-[#0F2318] rounded-2xl border border-[#81fA00]/15 p-8 shadow-2xl shadow-[#81fa00]/70 /10">
           {/* Logo */}
           <div className="flex items-center justify-center gap-2 mb-8">
             <span className="text-xl font-black text-white">
-              easysoft<span className="text-green-400  text-3xl font-bold">.</span>
+              easysoft<span className="text-[#81fa00]   text-3xl font-bold">.</span>
             </span>
           </div>
 
@@ -58,14 +58,14 @@ export default function LoginPage() {
                 onChange={(e) => setForm((p) => ({ ...p, email: e.target.value }))}
                 required
                 placeholder="admin@easysoft.dev"
-                className="w-full px-4 py-3 rounded-xl bg-[#f2f2f2]/5 border border-white/10 text-white placeholder-gray-600 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-green-500/20 focus:outline-none text-sm transition-all"
+                className="w-full px-4 py-3 rounded-xl bg-[#f2f2f2]/5 border border-white/10 text-white placeholder-gray-600 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-[#81fa00]/70 /20 focus:outline-none text-sm transition-all"
               />
             </div>
 
             <div>
               <div className="flex items-center justify-between mb-1.5">
                 <label className="text-sm font-medium text-gray-300">Password</label>
-                <Link href="#" className="text-xs text-green-400  hover:text-green-400 transition-colors">Forgot password?</Link>
+                <Link href="#" className="text-xs text-[#81fa00]   hover:text-[#81fa00]  transition-colors">Forgot password?</Link>
               </div>
               <div className="relative">
                 <input
@@ -74,7 +74,7 @@ export default function LoginPage() {
                   onChange={(e) => setForm((p) => ({ ...p, password: e.target.value }))}
                   required
                   placeholder="••••••••"
-                  className="w-full px-4 py-3 pr-11 rounded-xl bg-[#f2f2f2]/5 border border-white/10 text-white placeholder-gray-600 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-green-500/20 focus:outline-none text-sm transition-all"
+                  className="w-full px-4 py-3 pr-11 rounded-xl bg-[#f2f2f2]/5 border border-white/10 text-white placeholder-gray-600 focus:border-[#81fA00]/50 focus:ring-2 focus:ring-[#81fa00]/70 /20 focus:outline-none text-sm transition-all"
                 />
                 <button
                   type="button"
@@ -89,7 +89,7 @@ export default function LoginPage() {
             <button
               type="submit"
               disabled={loading}
-              className="mt-2 w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-green-500 hover:bg-green-400 disabled:bg-green-500/50 text-black font-bold text-sm rounded-full transition-all shadow-lg shadow-green-500/25"
+              className="mt-2 w-full flex items-center justify-center gap-2 px-6 py-3.5 bg-[#81fa00]/70  hover:bg-[#81fa00]  disabled:bg-[#81fa00]/70 /50 text-black font-bold text-sm rounded-full transition-all shadow-lg shadow-[#81fa00]/70 /25"
             >
               {loading ? (
                 <><Loader size={16} className="animate-spin" /> Signing in...</>
@@ -101,7 +101,7 @@ export default function LoginPage() {
 
           <p className="mt-6 text-center text-sm text-gray-500">
             Don't have an account?{' '}
-            <Link href="/contact" className="text-green-400  hover:text-green-400 font-semibold transition-colors">
+            <Link href="/contact" className="text-[#81fa00]   hover:text-[#81fa00]  font-semibold transition-colors">
               Contact us
             </Link>
           </p>

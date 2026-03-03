@@ -48,14 +48,14 @@ export default async function ProjectDetailPage({ params }: Props) {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
           <Link
             href="/projects"
-            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-green-400 mb-8 transition-colors"
+            className="inline-flex items-center gap-2 text-sm text-gray-400 hover:text-[#81fa00]  mb-8 transition-colors"
           >
             <ArrowLeft size={14} /> Back to Projects
           </Link>
 
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
-              <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-green-500/15 text-green-400 border border-[#81fA00]/25 mb-5">
+              <span className="inline-block px-3 py-1 rounded-full text-xs font-bold bg-[#81fa00]/70 /15 text-[#81fa00]  border border-[#81fA00]/25 mb-5">
                 {project.category}
               </span>
               <h1 className="text-4xl lg:text-5xl font-black text-white mb-5 leading-tight">{project.title}</h1>
@@ -64,7 +64,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               <div className="flex flex-wrap gap-3">
                 <a
                   href={project.liveUrl}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-green-500 hover:bg-green-400 text-black font-semibold text-sm rounded-full transition-all shadow-lg shadow-green-500/25"
+                  className="inline-flex items-center gap-2 px-5 py-2.5 bg-[#81fa00]/70  hover:bg-[#81fa00]  text-black font-semibold text-sm rounded-full transition-all shadow-lg shadow-[#81fa00]/70 /25"
                 >
                   <ExternalLink size={15} /> Live Demo
                 </a>
@@ -78,7 +78,7 @@ export default async function ProjectDetailPage({ params }: Props) {
             </div>
 
             {/* Project image */}
-            <div className="rounded-2xl overflow-hidden border border-[#81fA00]/15 shadow-2xl shadow-green-500/10">
+            <div className="rounded-2xl overflow-hidden border border-[#81fA00]/15 shadow-2xl shadow-[#81fa00]/70 /10">
               <img src={project.image} alt={project.title} className="w-full h-72 object-cover" />
             </div>
           </div>
@@ -94,7 +94,7 @@ export default async function ProjectDetailPage({ params }: Props) {
               {/* Tech stack */}
               <div className="mb-10">
                 <h2 className="text-2xl font-black text-[#131313] dark:text-white mb-5 flex items-center gap-2">
-                  <Tag size={20} className="text-green-400 " /> Tech Stack
+                  <Tag size={20} className="text-[#81fa00]  " /> Tech Stack
                 </h2>
                 <div className="flex flex-wrap gap-2">
                   {project.tags.map((tag) => (
@@ -117,7 +117,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                       key={i}
                       className="bg-gray-50 dark:bg-[#0F2318] rounded-2xl p-5 border border-gray-200 dark:border-[#81fA00]/10 hover:border-[#81fA00]/30 transition-all"
                     >
-                      <CheckCircle size={20} className="text-green-400  mb-3" />
+                      <CheckCircle size={20} className="text-[#81fa00]   mb-3" />
                       <p className="text-sm font-semibold text-gray-800 dark:text-white">{result}</p>
                     </div>
                   ))}
@@ -137,8 +137,8 @@ export default async function ProjectDetailPage({ params }: Props) {
                     { icon: Tag, label: 'Category', value: project.category },
                   ].map(({ icon: Icon, label, value }) => (
                     <div key={label} className="flex items-center gap-3">
-                      <div className="w-9 h-9 rounded-xl bg-green-500/10 border border-[#81fA00]/20 flex items-center justify-center flex-shrink-0">
-                        <Icon size={15} className="text-green-400 " />
+                      <div className="w-9 h-9 rounded-xl bg-[#81fa00]/70 /10 border border-[#81fA00]/20 flex items-center justify-center flex-shrink-0">
+                        <Icon size={15} className="text-[#81fa00]  " />
                       </div>
                       <div>
                         <p className="text-xs text-gray-500">{label}</p>
@@ -151,7 +151,7 @@ export default async function ProjectDetailPage({ params }: Props) {
                 <div className="mt-6 pt-5 border-t border-gray-200 dark:border-[#81fA00]/10">
                   <Link
                     href="/contact"
-                    className="w-full flex items-center justify-center gap-2 px-5 py-3 bg-green-500 hover:bg-green-400 text-black font-semibold text-sm rounded-full transition-all"
+                    className="w-full flex items-center justify-center gap-2 px-5 py-3 bg-[#81fa00]/70  hover:bg-[#81fa00]  text-black font-semibold text-sm rounded-full transition-all"
                   >
                     Start Similar Project
                   </Link>
@@ -176,8 +176,8 @@ export default async function ProjectDetailPage({ params }: Props) {
                 >
                   <img src={p.image} alt={p.title} className="w-20 h-16 object-cover rounded-xl flex-shrink-0" />
                   <div>
-                    <span className="text-xs text-green-400  font-semibold">{p.category}</span>
-                    <h3 className="font-bold text-[#131313] dark:text-white text-sm group-hover:text-green-400  transition-colors">
+                    <span className="text-xs text-[#81fa00]   font-semibold">{p.category}</span>
+                    <h3 className="font-bold text-[#131313] dark:text-white text-sm group-hover:text-[#81fa00]   transition-colors">
                       {p.title}
                     </h3>
                     <p className="text-xs text-gray-500 mt-1 line-clamp-2">{p.description}</p>

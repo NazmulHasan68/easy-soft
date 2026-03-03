@@ -28,7 +28,7 @@ export default function ServicesPage() {
             <h1 className="text-5xl lg:text-6xl font-black text-white mb-6">
               Everything You Need to
               <br />
-              <span className="text-green-400">Build & Scale</span>
+              <span className="text-[#81fa00] ">Build & Scale</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-2xl mx-auto">
               From initial strategy to post-launch support, we provide end-to-end technology services that drive real business results.
@@ -54,7 +54,7 @@ export default function ServicesPage() {
           <div className="text-center mb-16">
             <span className="section-label">How We Work</span>
             <h2 className="text-4xl font-black text-[#131313] dark:text-white">
-              Our <em className="italic font-serif text-green-400 ">Process</em>
+              Our <em className="italic font-serif text-[#81fa00]  ">Process</em>
             </h2>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -67,10 +67,10 @@ export default function ServicesPage() {
                 transition={{ delay: i * 0.1 }}
                 className="relative bg-[#f2f2f2] dark:bg-[#0c2501] rounded-2xl p-6 border border-gray-200 dark:border-[#81fA00]/10 hover:border-[#81fA00]/30 transition-all group"
               >
-                <span className="text-5xl font-black text-green-400 /15 group-hover:text-green-400 /25 transition-colors absolute top-4 right-4">
+                <span className="text-5xl font-black text-[#81fa00]  /15 group-hover:text-[#81fa00]  /25 transition-colors absolute top-4 right-4">
                   {step.step}
                 </span>
-                <div className="w-10 h-10 rounded-xl bg-green-500/10 border border-[#81fA00]/20 flex items-center justify-center text-green-400  font-black text-sm mb-5">
+                <div className="w-10 h-10 rounded-xl bg-[#81fa00]/70 /10 border border-[#81fA00]/20 flex items-center justify-center text-[#81fa00]   font-black text-sm mb-5">
                   {step.step}
                 </div>
                 <h3 className="font-bold text-[#131313] dark:text-white mb-3">{step.title}</h3>

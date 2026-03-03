@@ -33,7 +33,7 @@ export default function Footer() {
           <div className="lg:col-span-2">
             <Link href="/" className="flex items-center gap-2 mb-5 group w-fit">
               <span className="text-xl font-bold text-white">
-                easysoft<span className="text-green-400  text-3xl font-bold">.</span>
+                easysoft<span className="text-[#81fa00]   text-3xl font-bold">.</span>
               </span>
             </Link>
             <p className="text-sm leading-relaxed text-gray-500 mb-6 max-w-xs">
@@ -41,16 +41,16 @@ export default function Footer() {
               simplify complex challenges.
             </p>
             <div className="flex flex-col gap-3 text-sm">
-              <div className="flex items-center gap-2.5 text-gray-500 hover:text-green-400 transition-colors">
-                <Mail size={14} className="text-green-400 " />
+              <div className="flex items-center gap-2.5 text-gray-500 hover:text-[#81fa00]  transition-colors">
+                <Mail size={14} className="text-[#81fa00]  " />
                 hello@easysoft.dev
               </div>
-              <div className="flex items-center gap-2.5 text-gray-500 hover:text-green-400 transition-colors">
-                <Phone size={14} className="text-green-400 " />
+              <div className="flex items-center gap-2.5 text-gray-500 hover:text-[#81fa00]  transition-colors">
+                <Phone size={14} className="text-[#81fa00]  " />
                 +1 (555) 000-0000
               </div>
               <div className="flex items-center gap-2.5 text-gray-500">
-                <MapPin size={14} className="text-green-400 " />
+                <MapPin size={14} className="text-[#81fa00]  " />
                 San Francisco, CA, USA
               </div>
             </div>
@@ -65,7 +65,7 @@ export default function Footer() {
                   <li key={link.label}>
                     <Link
                       href={link.href}
-                      className="text-sm text-gray-500 hover:text-green-400 transition-colors duration-200"
+                      className="text-sm text-gray-500 hover:text-[#81fa00]  transition-colors duration-200"
                     >
                       {link.label}
                     </Link>
@@ -89,7 +89,7 @@ export default function Footer() {
                 key={label}
                 href={href}
                 aria-label={label}
-                className="w-8 h-8 rounded-full border border-[#81fA00]/20 flex items-center justify-center text-gray-500 hover:text-green-400 hover:border-[#81fA00]/50 hover:bg-green-500/10 transition-all duration-200"
+                className="w-8 h-8 rounded-full border border-[#81fA00]/20 flex items-center justify-center text-gray-500 hover:text-[#81fa00]  hover:border-[#81fA00]/50 hover:bg-[#81fa00]/70 /10 transition-all duration-200"
               >
                 <Icon size={14} />
               </a>

@@ -24,7 +24,7 @@ export default function ContactPage() {
             <h1 className="text-5xl lg:text-6xl font-black text-white mb-6">
               Let's Build Something
               <br />
-              <span className="text-green-400">Amazing Together</span>
+              <span className="text-[#81fa00] ">Amazing Together</span>
             </h1>
             <p className="text-gray-400 text-lg max-w-xl mx-auto">
               Tell us about your project. We'll get back to you within 24 hours with a tailored solution.
@@ -52,12 +52,12 @@ export default function ContactPage() {
                       href={href}
                       className="flex items-start gap-4 group"
                     >
-                      <div className="w-10 h-10 rounded-xl bg-green-500/10 border border-[#81fA00]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-green-500/20 transition-colors">
-                        <Icon size={16} className="text-green-400 " />
+                      <div className="w-10 h-10 rounded-xl bg-[#81fa00]/70 /10 border border-[#81fA00]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#81fa00]/70 /20 transition-colors">
+                        <Icon size={16} className="text-[#81fa00]  " />
                       </div>
                       <div>
                         <p className="text-xs text-gray-500 dark:text-gray-500 mb-0.5">{label}</p>
-                        <p className="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-green-400  transition-colors">{value}</p>
+                        <p className="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-[#81fa00]   transition-colors">{value}</p>
                       </div>
                     </a>
                   ))}
@@ -66,7 +66,7 @@ export default function ContactPage() {
                 {/* Office image placeholder */}
                 <div className="rounded-2xl overflow-hidden border border-[#81fA00]/15 h-48 bg-[#0F2318] flex items-center justify-center">
                   <div className="text-center text-gray-500">
-                    <MapPin size={32} className="text-green-400 /30 mx-auto mb-2" />
+                    <MapPin size={32} className="text-[#81fa00]  /30 mx-auto mb-2" />
                     <p className="text-sm">San Francisco Office</p>
                   </div>
                 </div>

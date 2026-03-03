@@ -21,7 +21,7 @@ export default function ProjectsPage() {
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <span className="section-label">Our Portfolio</span>
             <h1 className="text-5xl lg:text-6xl font-black text-white mb-6">
-              Work That <span className="text-green-400">Speaks</span>
+              Work That <span className="text-[#81fa00] ">Speaks</span>
               <br />
               for Itself
             </h1>
@@ -43,8 +43,8 @@ export default function ProjectsPage() {
                 onClick={() => setActive(cat)}
                 className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ${
                   active === cat
-                    ? 'bg-green-500 text-black shadow-lg shadow-green-500/25'
-                    : 'bg-gray-100 dark:bg-[#0F2318] text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-[#81fA00]/10 hover:border-[#81fA00]/30 hover:text-green-400 '
+                    ? 'bg-[#81fa00]/70  text-black shadow-lg shadow-[#81fa00]/70 /25'
+                    : 'bg-gray-100 dark:bg-[#0F2318] text-gray-600 dark:text-gray-400 border border-gray-200 dark:border-[#81fA00]/10 hover:border-[#81fA00]/30 hover:text-[#81fa00]  '
                 }`}
               >
                 {cat}
@@ -54,7 +54,7 @@ export default function ProjectsPage() {
 
           {/* Results count */}
           <p className="text-sm text-gray-500 dark:text-gray-400 mb-8 text-center">
-            Showing <span className="text-green-400  font-semibold">{filtered.length}</span> projects
+            Showing <span className="text-[#81fa00]   font-semibold">{filtered.length}</span> projects
           </p>
 
           {/* Grid */}

@@ -18,10 +18,10 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay: index * 0.1 }}
       whileHover={{ y: -6 }}
-      className="group relative bg-[#f2f2f2] dark:bg-[#0F2318] rounded-2xl border border-gray-200 dark:border-[#81fA00]/15 overflow-hidden hover:border-[#81fA00]/40 transition-all duration-300 hover:shadow-xl hover:shadow-green-500/10"
+      className="group relative bg-[#f2f2f2] dark:bg-[#0c2701] rounded-2xl border border-gray-200 dark:border-[#81fa00]/15 overflow-hidden hover:border-[#81fa00]/40 transition-all duration-300 hover:shadow-xl hover:shadow-[#81fa00]/10"
     >
       {/* Image */}
-      <div className="relative h-52 overflow-hidden bg-gray-100 dark:bg-[#0c2501]">
+      <div className="relative h-52 overflow-hidden bg-gray-100 dark:bg-[#0c2701]">
         <img
           src={project.image}
           alt={project.title}
@@ -31,7 +31,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 
         {/* Category badge */}
         <div className="absolute top-3 left-3">
-          <span className="px-3 py-1 rounded-full text-xs font-semibold bg-green-500/90 text-black backdrop-blur-sm">
+          <span className="px-3 py-1 rounded-full text-xs font-semibold bg-[#81fa00]/90 text-black backdrop-blur-sm">
             {project.category}
           </span>
         </div>
@@ -39,7 +39,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
         {/* Arrow link */}
         <Link
           href={`/projects/${project.id}`}
-          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#f2f2f2]/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 hover:bg-green-500 hover:border-[#81fA00] hover:text-black transition-all duration-200"
+          className="absolute top-3 right-3 w-8 h-8 rounded-full bg-[#f2f2f2]/10 backdrop-blur-sm border border-white/20 flex items-center justify-center text-white opacity-0 group-hover:opacity-100 hover:bg-[#81fa00] hover:border-[#81fa00] hover:text-black transition-all duration-200"
         >
           <ArrowUpRight size={14} />
         </Link>
@@ -56,7 +56,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           </span>
         </div>
 
-        <h3 className="font-bold text-[#131313] dark:text-white text-base leading-snug mb-2 group-hover:text-green-400  dark:group-hover:text-green-400 transition-colors">
+        <h3 className="font-bold text-[#131313] dark:text-white text-base leading-snug mb-2 group-hover:text-[#81fa00]/80 dark:group-hover:text-[#81fa00] transition-colors">
           {project.title}
         </h3>
 
@@ -69,13 +69,13 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           {project.tags.slice(0, 3).map((tag) => (
             <span
               key={tag}
-              className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-green-500/10 text-green-600 dark:text-green-400 border border-[#81fA00]/20"
+              className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-[#81fa00]/10 text-[#81fa00] dark:text-[#81fa00] border border-[#81fa00]/20"
             >
               {tag}
             </span>
           ))}
           {project.tags.length > 3 && (
-            <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-[#f2f2f2]/5 text-gray-500 dark:text-gray-400">
+            <span className="px-2.5 py-0.5 rounded-full text-xs font-medium bg-gray-100 dark:bg-[#0c2701]/20 text-gray-500 dark:text-gray-400">
               +{project.tags.length - 3}
             </span>
           )}
@@ -83,7 +83,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 
         <Link
           href={`/projects/${project.id}`}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-green-600 dark:text-green-400 hover:text-green-400  transition-colors"
+          className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#81fa00] dark:text-[#81fa00] hover:text-[#81fa00]/80 transition-colors"
         >
           View Case Study <ArrowUpRight size={14} />
         </Link>

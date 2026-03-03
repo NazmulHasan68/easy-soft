@@ -42,7 +42,7 @@ export default function Sidebar() {
       <div className="flex items-center gap-3 px-4 py-5 border-b border-[#81fA00]/10">
         {!collapsed && (
           <span className="text-base font-bold text-white whitespace-nowrap">
-            easysoft<span className="text-green-400  text-3xl font-bold">.</span>
+            easysoft<span className="text-[#81fa00]   text-3xl font-bold">.</span>
           </span>
         )}
       </div>
@@ -50,7 +50,7 @@ export default function Sidebar() {
       {/* Collapse toggle */}
       <button
         onClick={() => setCollapsed(!collapsed)}
-        className="absolute -right-3 top-[72px] w-6 h-6 rounded-full bg-[#0F2318] border border-[#81fA00]/20 flex items-center justify-center text-green-400 hover:text-green-300 hover:border-[#81fA00]/40 z-10 transition-all"
+        className="absolute -right-3 top-[72px] w-6 h-6 rounded-full bg-[#0F2318] border border-[#81fA00]/20 flex items-center justify-center text-[#81fa00]  hover:text-[#81fa00]/40 hover:border-[#81fA00]/40 z-10 transition-all"
       >
         {collapsed ? <ChevronRight size={12} /> : <ChevronLeft size={12} />}
       </button>
@@ -69,7 +69,7 @@ export default function Sidebar() {
                   href={href}
                   className={`flex items-center gap-3 px-3 py-2.5 rounded-xl transition-all duration-200 group relative ${
                     isActive
-                      ? 'bg-green-500/15 text-green-400 border border-[#81fA00]/25'
+                      ? 'bg-[#81fa00]/70 /15 text-[#81fa00]  border border-[#81fA00]/25'
                       : 'text-gray-500 hover:text-gray-300 hover:bg-[#f2f2f2]/5'
                   }`}
                 >
@@ -78,12 +78,12 @@ export default function Sidebar() {
                     <span className="text-sm font-medium whitespace-nowrap flex-1">{label}</span>
                   )}
                   {!collapsed && badge && (
-                    <span className="ml-auto px-1.5 py-0.5 rounded-full text-xs font-bold bg-green-500 text-black min-w-[18px] text-center">
+                    <span className="ml-auto px-1.5 py-0.5 rounded-full text-xs font-bold bg-[#81fa00]/70  text-black min-w-[18px] text-center">
                       {badge}
                     </span>
                   )}
                   {collapsed && badge && (
-                    <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-green-500" />
+                    <span className="absolute top-1 right-1 w-2 h-2 rounded-full bg-[#81fa00]/70 " />
                   )}
 
                   {/* Tooltip when collapsed */}

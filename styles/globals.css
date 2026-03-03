@@ -1,21 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 
- 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
+/* Root brand colors */
 :root {
-  --bg-dark: #0A1A0F;
-  --bg-card: #0F2318;
-  --brand-green: #4ADE80;
-  --brand-green-dark: #16A34A;
+  --bg-dark: #0c2701;       /* Dark background */
+  --bg-card: #0c2701;       /* Dark card background */
+  --brand-green: #81fa00;   /* Primary green */
 }
 
+/* Reset box-sizing */
 * {
   box-sizing: border-box;
-  padding: 0;
   margin: 0;
+  padding: 0;
 }
 
 html {
@@ -24,13 +24,13 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background-color: #ffffff;
-  color: #111827;
+  background-color: #f2f2f2;
+  color: #131313;
 }
 
 .dark body {
   background-color: var(--bg-dark);
-  color: #f9fafb;
+  color: #f2f2f2;
 }
 
 /* Custom scrollbar */
@@ -38,37 +38,37 @@ body {
   width: 6px;
 }
 ::-webkit-scrollbar-track {
-  background: #0A1A0F;
+  background: var(--bg-dark);
 }
 ::-webkit-scrollbar-thumb {
-  background: #4ADE80;
+  background: var(--brand-green);
   border-radius: 3px;
 }
 
 /* Badge pill */
 .badge {
-  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-green-500/30 text-green-400 bg-green-500/10;
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-medium border border-[#81fa00]/50 text-[#81fa00] bg-[#81fa00]/10;
 }
 
 /* Section label */
 .section-label {
-  @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-green-500/40 text-green-400 bg-green-500/10 mb-6;
+  @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-[#0c2701] text-[#81fa00] bg-[#81fa00]/10 mb-6;
 }
 
 /* Green button */
 .btn-primary {
-  @apply inline-flex items-center gap-2 px-6 py-3 rounded-full bg-green-500 hover:bg-green-400 text-black font-semibold text-sm transition-all duration-200 shadow-lg shadow-green-500/25;
+  @apply inline-flex items-center gap-2 px-6 py-3 rounded-full bg-[#81fa00] hover:bg-[#81fa00]/80 text-black font-semibold text-sm transition-all duration-200 shadow-lg shadow-[#81fa00]/25;
 }
 
 .btn-outline {
-  @apply inline-flex items-center gap-2 px-6 py-3 rounded-full border border-green-500/40 text-green-400 hover:bg-green-500/10 font-semibold text-sm transition-all duration-200;
+  @apply inline-flex items-center gap-2 px-6 py-3 rounded-full border border-[#81fa00]/50 text-[#81fa00] hover:bg-[#81fa00]/20 font-semibold text-sm transition-all duration-200;
 }
 
-/* Card */
+/* Glass card */
 .glass-card {
-  @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl;
+  @apply bg-[#f2f2f2]/5 backdrop-blur-sm border border-[#f2f2f2]/10 rounded-2xl;
 }
 
 .dark .glass-card {
-  @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl;
+  @apply bg-[#0c2701]/50 backdrop-blur-sm border border-[#81fa00]/15 rounded-2xl;
 }

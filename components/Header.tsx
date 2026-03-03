@@ -79,7 +79,7 @@ export default function Header() {
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
             <span className="text-lg font-bold tracking-tight text-[#131313] dark:text-white">
-              easysoft<span className="text-green-400 ">.</span>
+              easysoft<span className="text-[#81fa00]  ">.</span>
             </span>
           </Link>
 
@@ -96,8 +96,8 @@ export default function Header() {
                   <span
                     className={`px-4 py-2 rounded-lg text-sm font-medium cursor-pointer transition-all duration-200 ${
                       pathname === link.href
-                        ? 'text-green-400  bg-green-500/10'
-                        : 'text-gray-600 dark:text-gray-300 hover:text-green-400  dark:hover:text-green-400 hover:bg-green-500/5'
+                        ? 'text-[#81fa00]   bg-[#81fa00]/70 /10'
+                        : 'text-gray-600 dark:text-gray-300 hover:text-[#81fa00]   dark:hover:text-[#81fa00]  hover:bg-[#81fa00]/70 /5'
                     }`}
                   >
                     {link.label}
@@ -116,7 +116,7 @@ export default function Header() {
                           <Link
                             key={item.path}
                             href={item.path}
-                            className={`flex items-center gap-2 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-green-500/10 dark:hover:bg-green-500/20 transition-colors ${
+                            className={`flex items-center gap-2 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-[#81fa00]/70 /10 dark:hover:bg-[#81fa00]/70 /20 transition-colors ${
                               item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''
                             }`}
                           >
@@ -138,8 +138,8 @@ export default function Header() {
                   href={link.href}
                   className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
                     pathname === link.href
-                      ? 'text-green-400  bg-green-500/10'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-green-400  dark:hover:text-green-400 hover:bg-green-500/5'
+                      ? 'text-[#81fa00]   bg-[#81fa00]/70 /10'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-[#81fa00]   dark:hover:text-[#81fa00]  hover:bg-[#81fa00]/70 /5'
                   }`}
                 >
                   {link.label}
@@ -152,7 +152,7 @@ export default function Header() {
           <div className="flex items-center gap-3">
             <button
               onClick={toggleDark}
-              className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-green-400  dark:hover:text-green-400 hover:bg-green-500/10 transition-all duration-200"
+              className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-[#81fa00]   dark:hover:text-[#81fa00]  hover:bg-[#81fa00]/70 /10 transition-all duration-200"
               aria-label="Toggle dark mode"
             >
               {dark ? <Sun size={18} /> : <Moon size={18} />}
@@ -160,7 +160,7 @@ export default function Header() {
 
             <Link
               href="/contact"
-              className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 bg-[#81fa00] hover:bg-[#81fa00]/50 text-black font-semibold text-sm rounded-full transition-all duration-200 shadow-lg shadow-green-500/25"
+              className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 bg-[#81fa00] hover:bg-[#81fa00]/50 text-black font-semibold text-sm rounded-full transition-all duration-200 shadow-lg shadow-[#81fa00]/70 /25"
             >
               Get a Quote
             </Link>
@@ -168,7 +168,7 @@ export default function Header() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-green-400  dark:hover:text-green-400"
+              className="lg:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-[#81fa00]   dark:hover:text-[#81fa00] "
             >
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -199,7 +199,7 @@ export default function Header() {
                             key={item.path}
                             href={item.path}
                             onClick={() => setMenuOpen(false)}
-                            className={`flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-green-500/10 dark:hover:bg-green-500/20 rounded-lg transition-colors ${
+                            className={`flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-[#81fa00]/70 /10 dark:hover:bg-[#81fa00]/70 /20 rounded-lg transition-colors ${
                               item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''
                             }`}
                           >
@@ -220,7 +220,7 @@ export default function Header() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
-                      className="px-4 py-3 rounded-xl text-sm font-medium transition-all text-gray-700 dark:text-gray-300 hover:text-green-400  hover:bg-green-500/10"
+                      className="px-4 py-3 rounded-xl text-sm font-medium transition-all text-gray-700 dark:text-gray-300 hover:text-[#81fa00]   hover:bg-[#81fa00]/70 /10"
                     >
                       {link.label}
                     </Link>
