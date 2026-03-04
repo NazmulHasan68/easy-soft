@@ -35,7 +35,7 @@ export default function LoginPage() {
       <motion.div
         initial={{ opacity: 0, y: 30 }}
         animate={{ opacity: 1, y: 0 }}
-        className="relative w-full max-w-md"
+        className="relative w-full max-w-md mt-12"
       >
         {/* Card */}
         <div className="bg-[#0F2318] rounded-2xl border border-[#81fA00]/15 p-8 shadow-2xl shadow-[#81fa00]/70 /10">
