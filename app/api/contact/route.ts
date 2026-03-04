@@ -74,9 +74,14 @@ function getEmailHtml({
                           <p style="margin:0;font-size:13px;color:#4d6b52;">${now}</p>
                         </td>
                         <td align="right" valign="top">
-                          <div style="width:52px;height:52px;background:#81fa0015;border:1px solid #81fa0030;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:22px;line-height:52px;text-align:center;">
-                            📬
-                          </div>
+                          <table cellpadding="0" cellspacing="0">
+                            <tr>
+                              <td width="52" height="52" align="center" valign="middle"
+                                style="width:52px;height:52px;background:#81fa0015;border:1px solid #81fa0030;border-radius:14px;font-size:22px;">
+                                ✉️
+                              </td>
+                            </tr>
+                          </table>
                         </td>
                       </tr>
                     </table>
@@ -199,10 +204,10 @@ export async function POST(req: Request) {
     }
 
     const { data, error } = await resend.emails.send({
-      from: 'EasySoft - Contact form <onboarding@resend.dev>' , // ← Change after domain verify
-      to: ['nazmulhasan00068@gmail.com',],
+      from: 'Contact Form <onboarding@resend.dev>', // ← Change after domain verify
+      to: ['nazmulhasan00068@gmail.com'],
       replyTo: email,
-      subject: `📬 New Inquiry from ${firstName}${companyName ? ` · ${companyName}` : ''}`,
+      subject: `New Inquiry from ${firstName}${companyName ? ` · ${companyName}` : ''}`,
       html: getEmailHtml({ firstName, email, companyName, projectBudget, projectBrief }),
     })
 
