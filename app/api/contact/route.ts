@@ -200,7 +200,7 @@ export async function POST(req: Request) {
 
     const { data, error } = await resend.emails.send({
       from: 'EasySoft - Contact form <onboarding@resend.dev>' , // ← Change after domain verify
-      to: ['nazmulhasan00068@gmail.com', 'fardin.easy.tech@gmail.com',],
+      to: ['nazmulhasan00068@gmail.com',],
       replyTo: email,
       subject: `📬 New Inquiry from ${firstName}${companyName ? ` · ${companyName}` : ''}`,
       html: getEmailHtml({ firstName, email, companyName, projectBudget, projectBrief }),
