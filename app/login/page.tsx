@@ -42,7 +42,7 @@ export default function LoginPage() {
           {/* Logo */}
           <div className="flex items-center justify-center gap-2 mb-8">
             <span className="text-xl font-black text-white">
-              easysoft<span className="text-[#81fa00]   text-3xl font-bold">.</span>
+              easysoft<span className="text-[#81fa00]   text-2xl md:text-3xl  font-bold">.</span>
             </span>
           </div>
 

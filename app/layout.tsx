@@ -1,13 +1,17 @@
 import type { Metadata } from 'next'
 import '../styles/globals.css'
-import Header from '@/components/Header'
 import Footer from '@/components/Footer'
+import Header from '@/components/Header'
 
 export const metadata: Metadata = {
   title: 'EasySoft – Smart Software Solutions',
   description:
     'We build scalable, secure, and innovative tech solutions designed to accelerate your business growth and simplify complex challenges.',
   keywords: 'software development, IT consulting, web development, mobile apps, cloud solutions',
+  icons: {
+    icon: '/logos/icon.png', // your tab favicon
+    apple: '/logos/icon.png', // optional Apple touch icon
+  },
 }
 
 export default function RootLayout({

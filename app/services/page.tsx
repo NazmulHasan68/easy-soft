@@ -25,12 +25,12 @@ export default function ServicesPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <span className="section-label">Our Services</span>
-            <h1 className="text-5xl lg:text-6xl font-black text-white mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6">
               Everything You Need to
               <br />
               <span className="text-[#81fa00] ">Build & Scale</span>
             </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto">
+            <p className="text-gray-400 text-sm md:text-md md:text-lg max-w-2xl mx-auto">
               From initial strategy to post-launch support, we provide end-to-end technology services that drive real business results.
             </p>
           </motion.div>
@@ -51,9 +51,9 @@ export default function ServicesPage() {
       {/* Process */}
       <section className="py-24 bg-gray-50 dark:bg-[#0F2318]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-16">
+          <div className="text-center mb-10 md:mb-16">
             <span className="section-label">How We Work</span>
-            <h2 className="text-4xl font-black text-[#131313] dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-black text-[#131313] dark:text-white">
               Our <em className="italic font-serif text-[#81fa00]  ">Process</em>
             </h2>
           </div>
@@ -67,14 +67,14 @@ export default function ServicesPage() {
                 transition={{ delay: i * 0.1 }}
                 className="relative bg-[#f2f2f2] dark:bg-[#0c2501] rounded-2xl p-6 border border-gray-200 dark:border-[#81fA00]/10 hover:border-[#81fA00]/30 transition-all group"
               >
-                <span className="text-5xl font-black text-[#81fa00]  /15 group-hover:text-[#81fa00]  /25 transition-colors absolute top-4 right-4">
+                <span className="text-3xl md:text-5xl font-black text-[#81fa00]  /15 group-hover:text-[#81fa00]  /25 transition-colors absolute top-4 right-4">
                   {step.step}
                 </span>
                 <div className="w-10 h-10 rounded-xl bg-[#81fa00]/70 /10 border border-[#81fA00]/20 flex items-center justify-center text-[#81fa00]   font-black text-sm mb-5">
                   {step.step}
                 </div>
-                <h3 className="font-bold text-[#131313] dark:text-white mb-3">{step.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{step.desc}</p>
+                <h3 className="font-bold text-base text-[#131313] dark:text-white mb-3">{step.title}</h3>
+                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{step.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -84,8 +84,8 @@ export default function ServicesPage() {
       {/* CTA */}
       <section className="py-24 bg-[#0c2501]/90 text-center">
         <div className="max-w-2xl mx-auto px-4">
-          <h2 className="text-4xl font-black text-white mb-6">Ready to Get Started?</h2>
-          <p className="text-gray-400 mb-10">Tell us about your project and we'll build the perfect solution for you.</p>
+          <h2 className="text-3xl md:text-4xl font-black text-white mb-6">Ready to Get Started?</h2>
+          <p className="text-gray-400 text-sm mb-10">Tell us about your project and we'll build the perfect solution for you.</p>
           <Link href="/contact" className="btn-primary">
             Start Your Project <ArrowRight size={16} />
           </Link>

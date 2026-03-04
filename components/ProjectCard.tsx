@@ -56,11 +56,11 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
           </span>
         </div>
 
-        <h3 className="font-bold text-[#131313] dark:text-white text-base leading-snug mb-2 group-hover:text-[#81fa00]/80 dark:group-hover:text-[#81fa00] transition-colors">
+        <h3 className="font-bold text-[#131313] dark:text-white text-sm md:text-base leading-snug mb-2 group-hover:text-[#81fa00]/80 dark:group-hover:text-[#81fa00] transition-colors">
           {project.title}
         </h3>
 
-        <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
+        <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 leading-relaxed mb-4 line-clamp-2">
           {project.description}
         </p>
 
@@ -83,7 +83,7 @@ export default function ProjectCard({ project, index = 0 }: ProjectCardProps) {
 
         <Link
           href={`/projects/${project.id}`}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#81fa00] dark:text-[#81fa00] hover:text-[#81fa00]/80 transition-colors"
+          className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-[#81fa00] dark:text-[#81fa00] hover:text-[#81fa00]/80 transition-colors"
         >
           View Case Study <ArrowUpRight size={14} />
         </Link>

@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import { Linkedin, Twitter, Facebook, Mail, Phone, MapPin } from 'lucide-react'
+import logo from '@/public/logos/white_logo.png'
+import Image from 'next/image'
 
 const footerLinks = {
   Company: [
@@ -31,11 +33,16 @@ export default function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 mb-14">
           {/* Brand */}
           <div className="lg:col-span-2">
-            <Link href="/" className="flex items-center gap-2 mb-5 group w-fit">
-              <span className="text-xl font-bold text-white">
-                easysoft<span className="text-[#81fa00]   text-3xl font-bold">.</span>
-              </span>
-            </Link>
+            {/* Logo */}
+          <Link href="/" className="flex items-center gap-2 group">
+            <Image
+              src={logo} // from public/logos
+              alt="EasySoft Logo"
+              width={150}
+              height={50}
+              priority
+            />
+          </Link>
             <p className="text-sm leading-relaxed text-gray-500 mb-6 max-w-xs">
               We build scalable, secure, and innovative tech solutions designed to accelerate your business growth and
               simplify complex challenges.

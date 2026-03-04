@@ -3,7 +3,8 @@ import React from 'react';
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, CheckCircle, Star, Infinity, HeadphonesIcon, DollarSign, Clock } from 'lucide-react'
+import { ArrowRight, CheckCircle, Star, Infinity as InfinityIcon, Headphones, DollarSign, Clock } from 'lucide-react'
+
 import ProjectCard from '@/components/ProjectCard'
 import ServiceCard from '@/components/ServiceCard'
 import { projects } from '@/data/projects'
@@ -18,12 +19,12 @@ const stats = [
 
 const whyUs = [
   {
-    icon: <Infinity size={28} className="text-[#81fa00] " />,
+    icon: <InfinityIcon  size={28} className="text-[#81fa00] " />,
     title: 'Unlimited Revisions',
     desc: 'We are committed to your success with unlimited revisions at every step. Our mission is to make your software vision come to life exactly as you imagine.',
   },
   {
-    icon: <HeadphonesIcon size={28} className="text-[#81fa00] " />,
+    icon: <Headphones size={28} className="text-[#81fa00] " />,
     title: 'Lifetime Technical Support',
     desc: 'With lifetime support, your business is never alone. We\'re here for you at every technical hurdle with necessary guidance wherever you need.',
   },
@@ -90,11 +91,11 @@ export default function HomePage() {
           }}
         />
         {/* Gradient blob */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#81fa00]/50 /5 blur-[120px] pointer-events-none" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#81fa00]/20 /5 blur-[120px] pointer-events-none" />
 
         <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-[#81fA00]/30 text-[#81fa00]/20  bg-[#81fa00]/70  mb-8">
+            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-[#81fA00]/30 text-[#f2f2f2] bg-[#81fa00]/70  mb-8">
               ✦ Smart Software Solutions
             </span>
           </motion.div>
@@ -103,7 +104,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-3xl sm:text-5xl lg:text-6xl font-black text-white leading-[1.05] tracking-tight mb-6"
+            className="text-2xl md:text-3xl  sm:text-5xl lg:text-6xl font-black text-[#f2f2f2] leading-[1.05] tracking-tight mb-6"
           >
             Smart Software Solutions
             <br />
@@ -116,7 +117,7 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-400 text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+            className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
           >
             We build scalable, secure, and innovative tech solutions designed to accelerate your business growth and
             simplify complex challenges.
@@ -126,17 +127,17 @@ export default function HomePage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-col sm:flex-row items-center justify-center gap-4"
+            className="flex flex-row items-center justify-center gap-4"
           >
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#81fa00] hover:bg-[#81fa00]/50 text-black font-bold text-sm rounded-full transition-all duration-200 shadow-lg shadow-[#81fa00]/70 /30 hover:shadow-[#81fa00]/70 /50"
+              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#81fa00] hover:bg-[#81fa00]/50 text-black font-bold text-xs md:text-sm rounded-full transition-all duration-200 shadow-lg shadow-[#81fa00]/70 /30 hover:shadow-[#81fa00]/70 /50"
             >
               Get a Quote <ArrowRight size={16} />
             </Link>
             <Link
               href="/projects"
-              className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 font-semibold text-sm rounded-full transition-all duration-200"
+              className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 font-semibold text-xs md:text-sm  rounded-full transition-all duration-200"
             >
               View Projects
             </Link>
@@ -151,7 +152,7 @@ export default function HomePage() {
           >
             {stats.map((stat, i) => (
               <div key={i} className="text-center">
-                <div className="text-3xl font-black text-white mb-1">{stat.value}</div>
+                <div className="text-2xl md:text-3xl  font-black text-white mb-1">{stat.value}</div>
                 <div className="text-xs text-gray-500 font-medium">{stat.label}</div>
               </div>
             ))}
@@ -164,7 +165,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14">
             <span className="section-label">What We Do</span>
-            <h2 className="text-4xl lg:text-5xl font-black text-[#131313] dark:text-white leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#131313] dark:text-white leading-tight">
               We Design <em className="italic dark:text-[#81fa00] text-[#81fa00]/50">Software .</em>
               <br />
               That speaks to <em className="italic font-serif">Audiences</em>
@@ -190,7 +191,7 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14">
             <span className="section-label">Why Choose Us</span>
-            <h2 className="text-4xl lg:text-5xl font-black text-[#131313] dark:text-white leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#131313] dark:text-white leading-tight">
               We <em className="italic font-serif">Design</em> for the <em className="text-[#81fa00]  font-serif italic">Future</em> to
               <br />
               Drive Today's <em className="italic font-serif">Success</em>
@@ -222,10 +223,10 @@ export default function HomePage() {
       {/* ─── PROJECTS ─── */}
       <section className="py-24 bg-[#f2f2f2] dark:bg-[#0c2501]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex items-end justify-between mb-14">
+          <div className="flex items-end justify-between mb-8 md:mb-14">
             <div>
               <span className="section-label">Our Work</span>
-              <h2 className="text-4xl lg:text-5xl font-black text-[#131313] dark:text-white">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#131313] dark:text-white">
                 Featured <em className="italic font-serif text-[#81fa00] ">Projects</em>
               </h2>
             </div>
@@ -245,9 +246,9 @@ export default function HomePage() {
       {/* ─── TESTIMONIALS ─── */}
       <section className="py-24 bg-[#0c2501]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 md:mb-14">
             <span className="section-label">Client Stories</span>
-            <h2 className="text-4xl lg:text-5xl font-black text-white leading-tight">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-white leading-tight">
               <em className="italic font-serif">Hear</em> What They're
               <br />
               Saying <em className="italic font-serif text-[#81fa00]">About Us</em>
@@ -276,10 +277,10 @@ export default function HomePage() {
                       <Star key={j} size={12} className="text-[#81fa00] fill-[#81fa00]" />
                     ))}
                   </div>
-                  <p className="text-gray-400 text-sm leading-relaxed mb-4 line-clamp-3">{t.text}</p>
+                  <p className="text-gray-400 text-sm md:text-sm leading-relaxed mb-4 line-clamp-3">{t.text}</p>
                   <div>
                     <span className="text-xs text-gray-600 block mb-0.5">Logo</span>
-                    <p className="font-bold text-white text-sm">{t.name}</p>
+                    <p className="font-bold text-white text-xs md:text-sm">{t.name}</p>
                     <p className="text-xs text-gray-500">{t.role}</p>
                   </div>
                 </div>
@@ -293,14 +294,14 @@ export default function HomePage() {
       <section className="py-24 bg-[#0F2318]">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="section-label">Get Started</span>
-          <h2 className="text-5xl lg:text-6xl font-black text-white mb-12 leading-tight">
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-12 leading-tight">
             <em className="italic font-serif">Ready</em> to Upgrade
             <br />
             Your <span className="text-[#81fa00]">Tech Stack?</span>
           </h2>
           <Link
             href="/contact"
-            className="inline-flex items-center gap-2 px-8 py-4 bg-[#81fa00] hover:bg-[#81fa00]/80 text-black font-bold rounded-full transition-all duration-200 text-base shadow-xl shadow-[#81fa00]/30"
+            className="inline-flex items-center gap-2 px-8 py-4 bg-[#81fa00] hover:bg-[#81fa00]/80 text-black font-bold rounded-full transition-all duration-200 text-sm md:text-base shadow-xl shadow-[#81fa00]/30"
           >
             Start Your Project <ArrowRight size={18} />
           </Link>
@@ -312,7 +313,7 @@ export default function HomePage() {
         <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="section-label">Queries</span>
-            <h2 className="text-4xl lg:text-5xl font-black text-[#131313] dark:text-white">
+            <h2 className="text-3xl lg:text-4xl font-black text-[#131313] dark:text-white">
               <em className="italic font-serif">Questions</em> You
               <br />
               May Ask

@@ -33,23 +33,23 @@ export default function ServiceCard({ service, index = 0, featured = false }: Se
 
       {/* Price tag */}
       <div className="absolute top-6 right-6">
-        <span className="text-xs font-semibold text-[#81fa00]/50 dark:text-[#81fa00] bg-[#81fa00]/10 px-2.5 py-1 rounded-full border border-[#81fa00]/20">
+        <span className="text-xs font-medium text-[#81fa00]/50 dark:text-[#81fa00] bg-[#81fa00]/10 px-2.5 py-1 rounded-full border border-[#81fa00]/20">
           {service.price}
         </span>
       </div>
 
-      <h3 className="text-lg font-bold text-[#131313] dark:text-white mb-3 pr-20 group-hover:text-[#81fa00]/80 dark:group-hover:text-[#81fa00] transition-colors">
+      <h3 className="text-base md:text-lg font-bold text-[#131313] dark:text-white mb-3 pr-20 group-hover:text-[#81fa00]/80 dark:group-hover:text-[#81fa00] transition-colors">
         {service.title}
       </h3>
 
-      <p className="text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-5">
+      <p className="text-xs md:text-sm text-gray-600 dark:text-gray-300 leading-relaxed mb-5">
         {service.description}
       </p>
 
       {/* Features */}
       <ul className="flex flex-col gap-2 mb-6">
         {service.features.map((feature) => (
-          <li key={feature} className="flex items-start gap-2.5 text-sm text-gray-600 dark:text-gray-300">
+          <li key={feature} className="flex items-start gap-2.5 text-xs md:text-sm text-gray-600 dark:text-gray-300">
             <Check size={14} className="text-[#81fa00] mt-0.5 flex-shrink-0" />
             {feature}
           </li>
@@ -58,7 +58,7 @@ export default function ServiceCard({ service, index = 0, featured = false }: Se
 
       <Link
         href="/contact"
-        className="inline-flex items-center gap-1.5 text-sm font-semibold text-[#81fa00] dark:text-[#81fa00]/80 hover:text-[#81fa00]/80 transition-colors group/link"
+        className="inline-flex items-center gap-1.5 text-xs md:text-sm font-semibold text-[#81fa00] dark:text-[#81fa00]/80 hover:text-[#81fa00]/80 transition-colors group/link"
       >
         Get Started
         <ArrowRight size={14} className="group-hover/link:translate-x-1 transition-transform" />

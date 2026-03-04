@@ -2,12 +2,14 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { motion, AnimatePresence } from 'framer-motion'
 import { Menu, X, Sun, Moon } from 'lucide-react'
+import logo from '@/public/logos/white_logo.png'
 
-// Services / Products Dropdown Data
-const servicesDropdown = [
+// Products Dropdown Data
+const ProductsDropdown = [
   { name: "EasyManager", path: "/easy", comingSoon: true },
   { name: "EasyLedger", path: "/easylead", comingSoon: false },
   { name: "EasyPOS", path: "/easylpos", comingSoon: false },
@@ -25,7 +27,7 @@ const navLinks = [
   { label: 'Home', href: '/' },
   { label: 'About', href: '/about' },
   { label: 'Services', href: '/services' },
-  { label: 'Products', href: '/products', dropdown: servicesDropdown },
+  { label: 'Products', href: '/products', dropdown: ProductsDropdown },
   { label: 'Contact', href: '/contact' },
 ]
 
@@ -34,6 +36,7 @@ export default function Header() {
   const [scrolled, setScrolled] = useState(false)
   const [dark, setDark] = useState(false)
   const [dropdownOpen, setDropdownOpen] = useState(false)
+  const [mobileDropdownOpen, setMobileDropdownOpen] = useState<string | null>(null)
   const pathname = usePathname()
 
   // Scroll effect
@@ -66,6 +69,14 @@ export default function Header() {
     setDark(!dark)
   }
 
+  // Smooth scroll for same-page anchors
+  const handleAnchorClick = (href: string) => {
+    if (href.startsWith('#')) {
+      const section = document.querySelector(href)
+      section?.scrollIntoView({ behavior: 'smooth' })
+    }
+  }
+
   return (
     <header
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
@@ -78,9 +89,13 @@ export default function Header() {
         <div className="flex items-center justify-between h-16 lg:h-20">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <span className="text-lg font-bold tracking-tight text-[#131313] dark:text-white">
-              easysoft<span className="text-[#81fa00]  ">.</span>
-            </span>
+            <Image
+              src={logo}
+              alt="EasySoft Logo"
+              width={150}
+              height={50}
+              priority
+            />
           </Link>
 
           {/* Desktop Nav */}
@@ -94,10 +109,10 @@ export default function Header() {
                   onMouseLeave={() => setDropdownOpen(false)}
                 >
                   <span
-                    className={`px-4 py-2 rounded-lg text-sm font-medium cursor-pointer transition-all duration-200 ${
+                    className={`px-4 py-2 text-sm font-medium cursor-pointer transition-all duration-200 ${
                       pathname === link.href
-                        ? 'text-[#81fa00]   bg-[#81fa00]/70 /10'
-                        : 'text-gray-600 dark:text-gray-300 hover:text-[#81fa00]   dark:hover:text-[#81fa00]  hover:bg-[#81fa00]/70 /5'
+                        ? 'border-b-2 border-[#81fa00] text-[#81fa00]'
+                        : 'text-gray-600 dark:text-gray-300 hover:text-[#81fa00] dark:hover:text-[#81fa00]'
                     }`}
                   >
                     {link.label}
@@ -116,7 +131,7 @@ export default function Header() {
                           <Link
                             key={item.path}
                             href={item.path}
-                            className={`flex items-center gap-2 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-[#81fa00]/70 /10 dark:hover:bg-[#81fa00]/70 /20 transition-colors ${
+                            className={`flex items-center gap-2 px-4 py-3 text-gray-700 dark:text-gray-300 hover:bg-[#81fa00]/70 dark:hover:bg-[#81fa00]/70 rounded-lg transition-colors ${
                               item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''
                             }`}
                           >
@@ -136,10 +151,11 @@ export default function Header() {
                 <Link
                   key={link.href}
                   href={link.href}
-                  className={`px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 ${
+                  onClick={() => handleAnchorClick(link.href)}
+                  className={`px-4 py-2  text-sm font-medium transition-all duration-200 ${
                     pathname === link.href
-                      ? 'text-[#81fa00]   bg-[#81fa00]/70 /10'
-                      : 'text-gray-600 dark:text-gray-300 hover:text-[#81fa00]   dark:hover:text-[#81fa00]  hover:bg-[#81fa00]/70 /5'
+                      ? 'border-b-2 border-[#81fa00] text-[#81fa00]'
+                      : 'text-gray-600 dark:text-gray-300 hover:text-[#81fa00] dark:hover:text-[#81fa00]'
                   }`}
                 >
                   {link.label}
@@ -150,17 +166,10 @@ export default function Header() {
 
           {/* Right Side */}
           <div className="flex items-center gap-3">
-            <button
-              onClick={toggleDark}
-              className="p-2 rounded-lg text-gray-500 dark:text-gray-400 hover:text-[#81fa00]   dark:hover:text-[#81fa00]  hover:bg-[#81fa00]/70 /10 transition-all duration-200"
-              aria-label="Toggle dark mode"
-            >
-              {dark ? <Sun size={18} /> : <Moon size={18} />}
-            </button>
 
             <Link
               href="/contact"
-              className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 bg-[#81fa00] hover:bg-[#81fa00]/50 text-black font-semibold text-sm rounded-full transition-all duration-200 shadow-lg shadow-[#81fa00]/70 /25"
+              className="hidden lg:inline-flex items-center gap-2 px-5 py-2.5 bg-[#81fa00] hover:bg-[#81fa00]/50 text-black font-semibold text-sm rounded-full transition-all duration-200 shadow-lg shadow-[#81fa00]/70"
             >
               Get a Quote
             </Link>
@@ -168,7 +177,7 @@ export default function Header() {
             {/* Mobile Menu Toggle */}
             <button
               onClick={() => setMenuOpen(!menuOpen)}
-              className="lg:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-[#81fa00]   dark:hover:text-[#81fa00] "
+              className="lg:hidden p-2 rounded-lg text-gray-600 dark:text-gray-300 hover:text-[#81fa00] dark:hover:text-[#81fa00]"
             >
               {menuOpen ? <X size={22} /> : <Menu size={22} />}
             </button>
@@ -190,28 +199,44 @@ export default function Header() {
                 if (link.dropdown) {
                   return (
                     <div key={link.href} className="flex flex-col">
-                      <span className="px-4 py-3 rounded-xl text-sm font-medium cursor-pointer text-gray-700 dark:text-gray-300">
+                      <button
+                        onClick={() =>
+                          setMobileDropdownOpen((prev) =>
+                            prev === link.href ? null : link.href
+                          )
+                        }
+                        className="flex justify-between w-full px-4 py-3 text-sm font-medium text-gray-700 dark:text-gray-300 hover:text-[#81fa00] hover:bg-[#81fa00]/70 transition-colors"
+                      >
                         {link.label}
-                      </span>
-                      <div className="ml-4 flex flex-col gap-1">
-                        {link.dropdown.map((item) => (
-                          <Link
-                            key={item.path}
-                            href={item.path}
-                            onClick={() => setMenuOpen(false)}
-                            className={`flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-[#81fa00]/70 /10 dark:hover:bg-[#81fa00]/70 /20 rounded-lg transition-colors ${
-                              item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''
-                            }`}
-                          >
-                            <span>{item.name}</span>
-                            {item.comingSoon && (
-                              <span className="text-xs text-gray-500 dark:text-gray-400 ml-auto">
-                                Coming... 
-                              </span>
-                            )}
-                          </Link>
-                        ))}
-                      </div>
+                        <span>{mobileDropdownOpen === link.href ? '▲' : '▼'}</span>
+                      </button>
+
+                      {mobileDropdownOpen === link.href && (
+                        <motion.div
+                          initial={{ opacity: 0, height: 0 }}
+                          animate={{ opacity: 1, height: 'auto' }}
+                          exit={{ opacity: 0, height: 0 }}
+                          className="ml-4 flex flex-col gap-1 mt-1"
+                        >
+                          {link.dropdown.map((item) => (
+                            <Link
+                              key={item.path}
+                              href={item.path}
+                              onClick={() => setMenuOpen(false)}
+                              className={`flex items-center gap-2 px-4 py-2 text-gray-700 dark:text-gray-300 hover:bg-[#81fa00]/70 dark:hover:bg-[#81fa00]/70  transition-colors ${
+                                item.comingSoon ? 'opacity-50 cursor-not-allowed' : ''
+                              }`}
+                            >
+                              <span>{item.name}</span>
+                              {item.comingSoon && (
+                                <span className="text-xs text-gray-500 dark:text-gray-400 ml-auto">
+                                  Coming...
+                                </span>
+                              )}
+                            </Link>
+                          ))}
+                        </motion.div>
+                      )}
                     </div>
                   )
                 } else {
@@ -220,7 +245,7 @@ export default function Header() {
                       key={link.href}
                       href={link.href}
                       onClick={() => setMenuOpen(false)}
-                      className="px-4 py-3 rounded-xl text-sm font-medium transition-all text-gray-700 dark:text-gray-300 hover:text-[#81fa00]   hover:bg-[#81fa00]/70 /10"
+                      className="px-4 py-3  text-sm font-medium transition-all text-gray-700 dark:text-gray-300 hover:text-[#81fa00] hover:bg-[#81fa00]/70 border-b-2"
                     >
                       {link.label}
                     </Link>

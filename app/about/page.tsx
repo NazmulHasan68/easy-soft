@@ -37,10 +37,10 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <span className="section-label">About Us</span>
-            <h1 className="text-5xl lg:text-6xl font-black text-white mb-6 leading-tight">
+            <h1 className="text-3xl md:text-4xl lg:text-4xl font-black text-white mb-6 leading-tight">
               We Are <span className="text-[#81fa00] ">EasySoft</span>
             </h1>
-            <p className="text-gray-400 text-lg max-w-2xl mx-auto leading-relaxed">
+            <p className="text-gray-400 text-md md:text-lg max-w-2xl mx-auto leading-relaxed">
               A team of passionate engineers, designers, and strategists building the future of software — one innovative solution at a time.
             </p>
           </motion.div>
@@ -53,10 +53,10 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
             <motion.div initial={{ opacity: 0, x: -40 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: true }}>
               <span className="section-label">Our Story</span>
-              <h2 className="text-4xl font-black text-[#131313] dark:text-white mb-6">
+              <h2 className="md:text-4xl text-3xl font-black text-[#131313] dark:text-white mb-6">
                 Built to Solve <em className="italic font-serif text-[#81fa00]  ">Real Problems</em>
               </h2>
-              <div className="space-y-4 text-gray-600 dark:text-gray-400 leading-relaxed">
+              <div className="space-y-4 text-sm md:text-md text-gray-600 dark:text-gray-400 leading-relaxed">
                 <p>Founded in 2016, EasySoft began with a simple belief: great software should be accessible to businesses of all sizes. What started as a two-person consultancy has grown into a 50+ member team serving clients across 20 countries.</p>
                 <p>We specialize in translating complex business requirements into elegant, scalable digital solutions. From fintech platforms handling millions in transactions to healthcare systems trusted by thousands of patients — we build software that matters.</p>
                 <p>Our team combines deep technical expertise with strategic business thinking, ensuring every product we build not only works flawlessly but drives real, measurable results.</p>
@@ -76,7 +76,7 @@ export default function AboutPage() {
               ].map(({ icon: Icon, value, label }, i) => (
                 <div key={i} className="bg-gray-50 dark:bg-[#0F2318] rounded-2xl p-6 border border-gray-200 dark:border-[#81fA00]/10 text-center">
                   <Icon size={24} className="text-[#81fa00]   mx-auto mb-3" />
-                  <div className="text-3xl font-black text-[#131313] dark:text-white">{value}</div>
+                  <div className="text-2xl md:text-3xl  font-black text-[#131313] dark:text-white">{value}</div>
                   <div className="text-sm text-gray-500 mt-1">{label}</div>
                 </div>
               ))}
@@ -90,7 +90,7 @@ export default function AboutPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-14">
             <span className="section-label">Our Values</span>
-            <h2 className="text-4xl font-black text-[#131313] dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-black text-[#131313] dark:text-white">
               Principles That <em className="italic font-serif text-[#81fa00]  ">Guide Us</em>
             </h2>
           </div>
@@ -108,8 +108,8 @@ export default function AboutPage() {
                 <div className="w-12 h-12 rounded-xl bg-[#81fa00]/70 /10 border border-[#81fA00]/20 flex items-center justify-center mb-5">
                   <v.icon size={22} className="text-[#81fa00]  " />
                 </div>
-                <h3 className="font-bold text-[#131313] dark:text-white mb-3">{v.title}</h3>
-                <p className="text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{v.desc}</p>
+                <h3 className="font-bold text-sm md:text-base text-[#131313] dark:text-white mb-3">{v.title}</h3>
+                <p className="text-xs md:text-sm text-gray-500 dark:text-gray-400 leading-relaxed">{v.desc}</p>
               </motion.div>
             ))}
           </div>
@@ -154,13 +154,13 @@ export default function AboutPage() {
       {/* Team */}
       <section className="py-24 bg-gray-50 dark:bg-[#0F2318]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-14">
+          <div className="text-center mb-10 md:mb-14">
             <span className="section-label">The Team</span>
-            <h2 className="text-4xl font-black text-[#131313] dark:text-white">
+            <h2 className="text-3xl md:text-4xl font-black text-[#131313] dark:text-white">
               Meet the <em className="italic font-serif text-[#81fa00]  ">Builders</em>
             </h2>
           </div>
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-5">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-5">
             {team.map((member, i) => (
               <motion.div
                 key={i}

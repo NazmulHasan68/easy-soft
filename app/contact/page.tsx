@@ -21,12 +21,12 @@ export default function ContactPage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }}>
             <span className="section-label">Contact Us</span>
-            <h1 className="text-5xl lg:text-6xl font-black text-white mb-6">
+            <h1 className="text-3xl md:text-4xl lg:text-5xl font-black text-white mb-6">
               Let's Build Something
               <br />
               <span className="text-[#81fa00] ">Amazing Together</span>
             </h1>
-            <p className="text-gray-400 text-lg max-w-xl mx-auto">
+            <p className="text-gray-400 text-md md:text-lg max-w-xl mx-auto">
               Tell us about your project. We'll get back to you within 24 hours with a tailored solution.
             </p>
           </motion.div>
@@ -40,8 +40,8 @@ export default function ContactPage() {
             {/* Info panel */}
             <div className="lg:col-span-2">
               <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.1 }}>
-                <h2 className="text-2xl font-black text-[#131313] dark:text-white mb-3">Get in Touch</h2>
-                <p className="text-gray-500 dark:text-gray-400 text-sm leading-relaxed mb-8">
+                <h2 className="text-xl md:text-2xl font-black text-[#131313] dark:text-white mb-3">Get in Touch</h2>
+                <p className="text-gray-500 dark:text-gray-400 text-xs md:text-sm leading-relaxed mb-8">
                   Whether you have a project in mind or just want to explore what's possible — we'd love to hear from you.
                 </p>
 
@@ -52,12 +52,12 @@ export default function ContactPage() {
                       href={href}
                       className="flex items-start gap-4 group"
                     >
-                      <div className="w-10 h-10 rounded-xl bg-[#81fa00]/70 /10 border border-[#81fA00]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#81fa00]/70 /20 transition-colors">
+                      <div className="w-10 h-10 rounded-xl bg-[#81fa00]/70 border border-[#81fA00]/20 flex items-center justify-center flex-shrink-0 group-hover:bg-[#81fa00]/70 /20 transition-colors">
                         <Icon size={16} className="text-[#81fa00]  " />
                       </div>
                       <div>
                         <p className="text-xs text-gray-500 dark:text-gray-500 mb-0.5">{label}</p>
-                        <p className="text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-[#81fa00]   transition-colors">{value}</p>
+                        <p className="text-xs md:text-sm font-semibold text-gray-800 dark:text-gray-200 group-hover:text-[#81fa00]   transition-colors">{value}</p>
                       </div>
                     </a>
                   ))}
@@ -81,8 +81,8 @@ export default function ContactPage() {
                 transition={{ delay: 0.2 }}
                 className="bg-[#0F2318] rounded-2xl p-8 border border-[#81fA00]/15"
               >
-                <h2 className="text-xl font-bold text-white mb-2">Start Your Project</h2>
-                <p className="text-gray-500 text-sm mb-7">Fill out the form below and we'll prepare a custom proposal for you.</p>
+                <h2 className="md:text-xl text-md font-bold text-white mb-2">Start Your Project</h2>
+                <p className="text-gray-500 text-xs md:text-sm mb-7">Fill out the form below and we'll prepare a custom proposal for you.</p>
                 <ContactForm />
               </motion.div>
             </div>
