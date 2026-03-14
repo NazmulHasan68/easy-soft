@@ -192,10 +192,10 @@ export default function HomeSlider() {
       </AnimatePresence>
 
       {/* ── Desktop layout ── */}
-      <div className="relative z-20 min-h-screen hidden lg:flex flex-row items-center">
+      <div className="relative z-20 min-h-screen hidden lg:flex flex-row max-w-7xl mx-auto items-center">
 
         {/* LEFT text */}
-        <div className="flex-1 flex flex-col justify-center px-14 xl:px-20 py-0 max-w-2xl">
+        <div className="flex-1 flex flex-col justify-center px-14 xl:px-20 py-0 ">
           <AnimatePresence mode="wait">
             <motion.div
               key={`text-${active}`}
@@ -314,7 +314,7 @@ export default function HomeSlider() {
         {/* RIGHT — Arc pills */}
         <div className="relative flex-shrink-0 w-[360px] xl:w-[400px] flex items-center justify-center h-screen">
           {/* Arc origin — pills radiate LEFT from right edge */}
-          <div className="absolute" style={{ right: '-50%', top: '50%', transform: 'translateY(-50%)' }}>
+          <div className="absolute" style={{ right: '-10%', top: '50%', transform: 'translateY(-10%)' }}>
             {arcItems.map(({ idx, offset }) => {
               const isActive  = idx === active
               const absOffset = Math.abs(offset)

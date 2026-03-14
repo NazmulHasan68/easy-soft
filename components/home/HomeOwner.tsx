@@ -165,7 +165,7 @@ export default function HomeOwner() {
             <div
               className="absolute inset-0 rounded-[40px] pointer-events-none"
               style={{
-                background: "linear-gradient(135deg, rgba(129,250,0,0.15) 0%, rgba(12,37,1,0.3) 100%)",
+                background: "linear-gradient(135deg, rgba(129,250,0,0.015) 0%, rgba(12,37,1,0.03) 100%)",
                 filter: "blur(36px)",
                 transform: "scale(1.1)",
               }}
@@ -178,29 +178,17 @@ export default function HomeOwner() {
               style={{
                 aspectRatio: "3/4",
                 border: "2px solid rgba(129,250,0,0.2)",
-                boxShadow: "0 48px 120px rgba(129,250,0,0.12), 0 8px 32px rgba(0,0,0,0.15)",
+                boxShadow: "0 48px 120px rgba(129,250,0,0.05), 0 8px 32px rgba(0,0,0,0.15)",
               }}
             >
               <Image
-                src="/owner/owner.jpg"
+                src="/logos/owner.jpg"
                 alt="EasySoft Founder"
                 fill
                 className="object-cover object-top"
                 onError={(e) => { (e.target as HTMLImageElement).style.display = "none"; }}
               />
 
-              {/* Placeholder */}
-              <div className="absolute inset-0 flex flex-col items-center justify-center gap-4 bg-[#0F2318]">
-                <div
-                  className="w-32 h-32 rounded-full flex items-center justify-center text-6xl"
-                  style={{ background: "rgba(129,250,0,0.08)", border: "2px solid rgba(129,250,0,0.2)" }}
-                >
-                  👤
-                </div>
-                <p className="text-xs font-medium text-gray-500">
-                  Add photo → /public/owner/owner.jpg
-                </p>
-              </div>
 
               {/* Name plate */}
               <div

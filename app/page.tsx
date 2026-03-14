@@ -28,87 +28,6 @@ export default function HomePage() {
       <HomeHero/>
 
 
-       {/* ─── HERO ─── */}
-      <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0c2501] pt-16">
-        {/* Background grid */}
-        <div
-          className="absolute inset-0 opacity-20"
-          style={{
-            backgroundImage:
-              'linear-gradient(rgba(74,222,128,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(74,222,128,0.08) 1px, transparent 1px)',
-            backgroundSize: '40px 40px',
-          }}
-        />
-        {/* Gradient blob */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#81fa00]/20 /5 blur-[120px] pointer-events-none" />
-
-        <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
-          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
-            <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-[#81fA00]/30 text-[#f2f2f2] bg-[#81fa00]/70  mb-8">
-              ✦ Smart Software Solutions
-            </span>
-          </motion.div>
-
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.1 }}
-            className="text-2xl md:text-3xl  sm:text-5xl lg:text-6xl font-black text-[#f2f2f2] leading-[1.05] tracking-tight mb-6"
-          >
-            Smart Software Solutions
-            <br />
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#81fA00] to-[#81fa00]/60">
-              for a Seamless Future
-            </span>
-          </motion.h1>
-
-          <motion.p
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
-          >
-            We build scalable, secure, and innovative tech solutions designed to accelerate your business growth and
-            simplify complex challenges.
-          </motion.p>
-
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6, delay: 0.3 }}
-            className="flex flex-row items-center justify-center gap-4"
-          >
-            <Link
-              href="/contact"
-              className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#81fa00] hover:bg-[#81fa00]/50 text-black font-bold text-xs md:text-sm rounded-full transition-all duration-200 shadow-lg shadow-[#81fa00]/70 /30 hover:shadow-[#81fa00]/70 /50"
-            >
-              Get a Quote <ArrowRight size={16} />
-            </Link>
-            <Link
-              href="/projects"
-              className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 font-semibold text-xs md:text-sm  rounded-full transition-all duration-200"
-            >
-              View Projects
-            </Link>
-          </motion.div>
-
-          {/* Stats row */}
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.7, delay: 0.5 }}
-            className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-20 max-w-3xl mx-auto"
-          >
-            {stats.map((stat, i) => (
-              <div key={i} className="text-center">
-                <div className="text-2xl md:text-3xl  font-black text-white mb-1">{stat.value}</div>
-                <div className="text-xs text-gray-500 font-medium">{stat.label}</div>
-              </div>
-            ))}
-          </motion.div>
-        </div>
-      </section>
-
 
       <HomeBrand/>
 
@@ -315,3 +234,87 @@ export default function HomePage() {
     </div>
   )
 }
+
+
+
+
+      //  {/* ─── HERO ─── */}
+      // <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0c2501] pt-16">
+      //   {/* Background grid */}
+      //   <div
+      //     className="absolute inset-0 opacity-20"
+      //     style={{
+      //       backgroundImage:
+      //         'linear-gradient(rgba(74,222,128,0.08) 1px, transparent 1px), linear-gradient(90deg, rgba(74,222,128,0.08) 1px, transparent 1px)',
+      //       backgroundSize: '40px 40px',
+      //     }}
+      //   />
+      //   {/* Gradient blob */}
+      //   <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[700px] h-[700px] rounded-full bg-[#81fa00]/20 /5 blur-[120px] pointer-events-none" />
+
+      //   <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 text-center">
+      //     <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.6 }}>
+      //       <span className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold uppercase tracking-widest border border-[#81fA00]/30 text-[#f2f2f2] bg-[#81fa00]/70  mb-8">
+      //         ✦ Smart Software Solutions
+      //       </span>
+      //     </motion.div>
+
+      //     <motion.h1
+      //       initial={{ opacity: 0, y: 30 }}
+      //       animate={{ opacity: 1, y: 0 }}
+      //       transition={{ duration: 0.7, delay: 0.1 }}
+      //       className="text-2xl md:text-3xl  sm:text-5xl lg:text-6xl font-black text-[#f2f2f2] leading-[1.05] tracking-tight mb-6"
+      //     >
+      //       Smart Software Solutions
+      //       <br />
+      //       <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#81fA00] to-[#81fa00]/60">
+      //         for a Seamless Future
+      //       </span>
+      //     </motion.h1>
+
+      //     <motion.p
+      //       initial={{ opacity: 0, y: 20 }}
+      //       animate={{ opacity: 1, y: 0 }}
+      //       transition={{ duration: 0.6, delay: 0.2 }}
+      //       className="text-gray-400 text-sm md:text-lg max-w-2xl mx-auto mb-10 leading-relaxed"
+      //     >
+      //       We build scalable, secure, and innovative tech solutions designed to accelerate your business growth and
+      //       simplify complex challenges.
+      //     </motion.p>
+
+      //     <motion.div
+      //       initial={{ opacity: 0, y: 20 }}
+      //       animate={{ opacity: 1, y: 0 }}
+      //       transition={{ duration: 0.6, delay: 0.3 }}
+      //       className="flex flex-row items-center justify-center gap-4"
+      //     >
+      //       <Link
+      //         href="/contact"
+      //         className="inline-flex items-center gap-2 px-7 py-3.5 bg-[#81fa00] hover:bg-[#81fa00]/50 text-black font-bold text-xs md:text-sm rounded-full transition-all duration-200 shadow-lg shadow-[#81fa00]/70 /30 hover:shadow-[#81fa00]/70 /50"
+      //       >
+      //         Get a Quote <ArrowRight size={16} />
+      //       </Link>
+      //       <Link
+      //         href="/projects"
+      //         className="inline-flex items-center gap-2 px-7 py-3.5 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 font-semibold text-xs md:text-sm  rounded-full transition-all duration-200"
+      //       >
+      //         View Projects
+      //       </Link>
+      //     </motion.div>
+
+      //     {/* Stats row */}
+      //     <motion.div
+      //       initial={{ opacity: 0, y: 30 }}
+      //       animate={{ opacity: 1, y: 0 }}
+      //       transition={{ duration: 0.7, delay: 0.5 }}
+      //       className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-20 max-w-3xl mx-auto"
+      //     >
+      //       {stats.map((stat, i) => (
+      //         <div key={i} className="text-center">
+      //           <div className="text-2xl md:text-3xl  font-black text-white mb-1">{stat.value}</div>
+      //           <div className="text-xs text-gray-500 font-medium">{stat.label}</div>
+      //         </div>
+      //       ))}
+      //     </motion.div>
+      //   </div>
+      // </section>

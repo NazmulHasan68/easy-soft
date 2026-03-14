@@ -168,7 +168,7 @@ export default function HomeHero() {
             initial={{ opacity: 0, y: 70 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.15, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black text-white leading-[1.02] tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.02] tracking-tight"
           >
             We Build Software
           </motion.h1>
@@ -178,7 +178,7 @@ export default function HomeHero() {
             initial={{ opacity: 0, y: 70 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.9, delay: 0.28, ease: [0.22, 1, 0.36, 1] }}
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl font-black leading-[1.02] tracking-tight"
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-8xl font-black leading-[1.02] tracking-tight"
           >
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#81fa00] via-[#a8ff00] to-[#81fa00]/60">
               That Scales.
@@ -211,12 +211,7 @@ export default function HomeHero() {
             Start Your Project
             <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform duration-200" />
           </Link>
-          <Link
-            href="/projects"
-            className="inline-flex items-center gap-2 px-8 py-4 border border-white/15 text-gray-300 hover:text-white hover:border-white/30 hover:bg-white/5 font-semibold rounded-full transition-all duration-200 text-sm md:text-base backdrop-blur-sm"
-          >
-            View Our Work
-          </Link>
+ 
         </motion.div>
 
         {/* Stats */}
@@ -231,7 +226,7 @@ export default function HomeHero() {
               key={i}
               className="bg-[#0c2501]/80 backdrop-blur-sm px-6 py-5 text-center hover:bg-[#81fa00]/5 transition-colors duration-300"
             >
-              <div className="text-2xl md:text-3xl font-black text-white mb-1">{stat.value}</div>
+              <div className="text-xl md:text-2xl font-black text-white mb-1">{stat.value}</div>
               <div className="text-[10px] md:text-xs text-gray-500 font-medium uppercase tracking-wider">{stat.label}</div>
             </div>
           ))}
