@@ -5,7 +5,7 @@ import { motion } from 'framer-motion'
 import Link from 'next/link'
 import { ArrowRight, CheckCircle, Star } from 'lucide-react' 
 import { faqs, stats, testimonials, whyUs } from '@/data/homedata'
-import ProjectCard from '@/components/ProjectCard'
+// import ProjectCard from '@/components/ProjectCard'
 import ServiceCard from '@/components/ServiceCard'
 import { services } from '@/data/services'
 import HomeWorldMap from '@/components/home/HomeWorldMap';
@@ -28,54 +28,7 @@ export default function HomePage() {
       <HomeHero/>
 
 
-      <HomeBrand/>
-
-
-      {/* ─── WHAT WE DO ─── */}
-      <section className="py-24 bg-[#f2f2f2] dark:bg-[#0c2501]">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="mb-14">
-            <span className="section-label">What We Do</span>
-            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#131313] dark:text-white leading-tight">
-              We Design <em className="italic dark:text-[#81fa00] text-[#81fa00]/50">Software .</em>
-              <br />
-              That speaks to <em className="italic font-serif">Audiences</em>
-            </h2>
-          </div>
-
-          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {services.slice(0, 3).map((service, i) => (
-              <ServiceCard key={service.id} service={service} index={i} />
-            ))}
-          </div>
-
-          <div className="grid md:hidden grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-6">
-            {services.slice(0, 2).map((service, i) => (
-              <ServiceCard key={service.id} service={service} index={i} />
-            ))}
-          </div>
-
-          <div className="mt-10 text-center">
-            <Link href="/services" className="btn-outline">
-              See All Services <ArrowRight size={15} />
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      <HomeVideoTestimonial/>
-
-
-      <HomeOwner/>
-
-      <HomeDeployTeam/>
-
-
-      <HomeWorldMap/>
-
-
-      
-      {/* ─── HERO ─── */}
+       {/* ─── HERO ─── */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0c2501] pt-16">
         {/* Background grid */}
         <div
@@ -156,6 +109,54 @@ export default function HomePage() {
         </div>
       </section>
 
+
+      <HomeBrand/>
+
+
+      {/* ─── WHAT WE DO ─── */}
+      <section className="py-24 bg-[#f2f2f2] dark:bg-[#0c2501]">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="mb-14">
+            <span className="section-label">What We Do</span>
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-black text-[#131313] dark:text-white leading-tight">
+              We Design <em className="italic dark:text-[#81fa00] text-[#81fa00]/50">Software .</em>
+              <br />
+              That speaks to <em className="italic font-serif">Audiences</em>
+            </h2>
+          </div>
+
+          <div className="hidden md:grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            {services.slice(0, 3).map((service, i) => (
+              <ServiceCard key={service.id} service={service} index={i} />
+            ))}
+          </div>
+
+          <div className="grid md:hidden grid-cols-1 sm:grid-cols-2  lg:grid-cols-3 gap-6">
+            {services.slice(0, 2).map((service, i) => (
+              <ServiceCard key={service.id} service={service} index={i} />
+            ))}
+          </div>
+
+          <div className="mt-10 text-center">
+            <Link href="/services" className="btn-outline">
+              See All Services <ArrowRight size={15} />
+            </Link>
+          </div>
+        </div>
+      </section>
+
+      <HomeVideoTestimonial/>
+
+
+      <HomeOwner/>
+
+      <HomeDeployTeam/>
+
+
+      <HomeWorldMap/>
+
+
+    
 
 
       {/* ─── WHY CHOOSE US ─── */}
