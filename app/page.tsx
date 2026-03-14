@@ -114,7 +114,7 @@ export default function HomePage() {
 
 
       {/* ─── WHAT WE DO ─── */}
-      <section className="py-24 bg-[#f2f2f2] dark:bg-[#0c2501]">
+      {/* <section className="py-24 bg-[#f2f2f2] dark:bg-[#0c2501]">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-14">
             <span className="section-label">What We Do</span>
@@ -143,7 +143,7 @@ export default function HomePage() {
             </Link>
           </div>
         </div>
-      </section>
+      </section> */}
 
       <HomeVideoTestimonial/>
 
