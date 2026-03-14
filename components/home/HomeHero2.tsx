@@ -4,6 +4,7 @@ import { useState, useEffect, useCallback } from 'react'
 import Image from 'next/image'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, ChevronLeft, ChevronRight } from 'lucide-react'
+import { useRouter } from 'next/navigation'
 
 interface Slide {
   image: string
@@ -32,7 +33,7 @@ const slides: Slide[] = [
     subtitle: 'Built to Perform.',
     description: 'Lightning-fast, SEO-optimized, and pixel-perfect web applications that convert visitors into customers and ideas into revenue.',
     cta: 'Start Project',
-    accent: '#60a5fa',
+    accent: '#81fa00',
   },
   {
     image: '/slider/slider3.jpg',
@@ -41,7 +42,7 @@ const slides: Slide[] = [
     subtitle: 'Will Love.',
     description: 'Cross-platform mobile experiences built with React Native and Flutter — smooth, fast, and ready for millions of users.',
     cta: 'Contact Us',
-    accent: '#f97316',
+    accent: '#81fa00',
   },
   {
     image: '/slider/slider4.jpg',
@@ -50,7 +51,7 @@ const slides: Slide[] = [
     subtitle: 'Drives Results.',
     description: 'We craft interfaces that are not just beautiful — they are intuitive, conversion-focused, and built around your users.',
     cta: 'Start Project',
-    accent: '#a78bfa',
+    accent: '#81fa00',
   },
   {
     image: '/slider/slider5.jpg',
@@ -59,7 +60,7 @@ const slides: Slide[] = [
     subtitle: 'That Never Sleeps.',
     description: 'Auto-scaling cloud architecture, CI/CD pipelines, and zero-downtime deployments — engineered for reliability at any scale.',
     cta: 'Contact Us',
-    accent: '#34d399',
+    accent: '#81fa00',
   },
   {
     image: '/slider/slider6.jpg',
@@ -68,7 +69,7 @@ const slides: Slide[] = [
     subtitle: 'For the Future.',
     description: 'We integrate AI, machine learning, and smart automation into your products to reduce costs and unlock new capabilities.',
     cta: 'Start Project',
-    accent: '#fbbf24',
+    accent: '#81fa00',
   },
   {
     image: '/slider/slider7.jpg',
@@ -77,7 +78,7 @@ const slides: Slide[] = [
     subtitle: 'On Demand.',
     description: 'Extend your team instantly with pre-vetted senior developers who integrate into your workflow and start shipping in 48 hours.',
     cta: 'Contact Us',
-    accent: '#f472b6',
+    accent: '#81fa00',
   },
   {
     image: '/slider/slider8.jpg',
@@ -90,7 +91,7 @@ const slides: Slide[] = [
   },
 ]
 
-const AUTOPLAY   = 4000
+const AUTOPLAY   = 3000
 const TOTAL      = slides.length
 const ARC_COUNT  = 5
 const ARC_RADIUS = 190
@@ -100,6 +101,8 @@ export default function HomeSlider() {
   const [active,   setActive]   = useState(0)
   const [paused,   setPaused]   = useState(false)
   const [progress, setProgress] = useState(0)
+
+  const router = useRouter();
 
   const goTo = useCallback((index: number) => {
     setActive((index + TOTAL) % TOTAL)
@@ -256,6 +259,7 @@ export default function HomeSlider() {
                 className="flex items-center gap-3 mb-10"
               >
                 <button
+                  onClick={() => router.push("/contact")}
                   className="group inline-flex items-center gap-2 px-7 py-3.5 rounded-full font-black text-sm transition-all duration-200 hover:scale-105 active:scale-100"
                   style={{
                     backgroundColor: slide.accent,
@@ -266,9 +270,7 @@ export default function HomeSlider() {
                   {slide.cta}
                   <ArrowRight size={14} className="group-hover:translate-x-1 transition-transform duration-200" />
                 </button>
-                <button className="px-7 py-3.5 rounded-full font-semibold text-sm text-white/80 border border-white/15 backdrop-blur-sm hover:bg-white/8 hover:text-white hover:border-white/25 transition-all duration-200">
-                  Learn More
-                </button>
+
               </motion.div>
 
               {/* Progress + counter */}
