@@ -4,11 +4,11 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import {
   LayoutDashboard, BookOpen, ShoppingCart, Receipt,
-  Package, Utensils, Users, Building2, BarChart2,
+  Package, Utensils, Users, BarChart2,
   GraduationCap, ArrowRight, X, Check, Stethoscope,
+  Home, Heart, Store,
 } from 'lucide-react'
 
-// ─── Types ───────────────────────────────────────────────────────────────────
 interface Product {
   name: string
   path: string
@@ -22,11 +22,10 @@ interface Product {
   accent: '#81fa00' | '#4ade80' | '#a3e635'
 }
 
-// ─── Data — synced exactly with ProductsDropdown ──────────────────────────────
 const PRODUCTS: Product[] = [
   {
     name: 'EasyAnaly AI',
-    path: 'https://p1.easy-soft.co/',  // ✅ external live URL
+    path: 'https://p1.easy-soft.co/',
     soon: false,
     cat: 'Analytics',
     desc: 'AI-powered insights and dashboards for your business data.',
@@ -38,7 +37,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyClinic',
-    path: 'https://p2.easy-soft.co/',  // ✅ new product added
+    path: 'https://p2.easy-soft.co/',
     soon: false,
     cat: 'Healthcare',
     desc: 'Complete clinic and patient management for modern practices.',
@@ -50,7 +49,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyManager',
-    path: 'https://p3.easy-soft.co/',  // ✅ external live URL
+    path: 'https://p3.easy-soft.co/',
     soon: false,
     cat: 'Management',
     desc: 'All-in-one business manager for teams and operations.',
@@ -62,7 +61,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyPOS',
-    path: 'https://p4.easy-soft.co/',  // ✅ external live URL
+    path: 'https://p4.easy-soft.co/',
     soon: false,
     cat: 'Retail',
     desc: 'Fast, reliable point-of-sale for retail and service businesses.',
@@ -74,7 +73,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyHRM',
-    path: 'https://p5.easy-soft.co/',  // ✅ external live URL
+    path: 'https://p5.easy-soft.co/',
     soon: false,
     cat: 'HR',
     desc: 'Payroll, attendance, and employee records simplified.',
@@ -85,8 +84,44 @@ const PRODUCTS: Product[] = [
     accent: '#81fa00',
   },
   {
+    name: 'AbashonX',
+    path: 'https://rental-dashboard-pi.vercel.app/login',
+    soon: false,
+    cat: 'Real Estate',
+    desc: 'Smart rental and property management platform.',
+    long: 'AbashonX simplifies property listings, tenant management, rent collection, and maintenance requests for landlords and agencies.',
+    tags: ['Rental', 'Property', 'Tenants'],
+    results: ['Tenant portal', 'Rent collection', 'Maintenance tracking'],
+    icon: Home,
+    accent: '#4ade80',
+  },
+  {
+    name: 'ShomporkoX',
+    path: 'https://shomporkox.easytechsolutions.xyz/',
+    soon: false,
+    cat: 'CRM',
+    desc: 'Lead management and customer relationship platform.',
+    long: 'ShomporkoX helps your sales team track leads, manage pipelines, and nurture customer relationships to close deals faster.',
+    tags: ['CRM', 'Leads', 'Pipeline'],
+    results: ['Lead tracking', 'Pipeline management', 'Follow-up reminders'],
+    icon: Heart,
+    accent: '#a3e635',
+  },
+  {
+    name: 'DokanX',
+    path: 'https://dokanxbd.com/',
+    soon: false,
+    cat: 'E-Commerce',
+    desc: 'Complete e-commerce solution for Bangladeshi businesses.',
+    long: 'DokanX provides everything you need to sell online — from product listings and order management to delivery tracking and payments.',
+    tags: ['E-Commerce', 'Orders', 'Payments'],
+    results: ['Product catalog', 'Order management', 'Delivery tracking'],
+    icon: Store,
+    accent: '#81fa00',
+  },
+  {
     name: 'EasyLedger',
-    path: '/easylead',                 // ✅ internal coming soon
+    path: '/easylead',
     soon: true,
     cat: 'Finance',
     desc: 'Modern ledger and bookkeeping for growing businesses.',
@@ -98,7 +133,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyAccounts',
-    path: '/easyaccounts',             // ✅ internal coming soon
+    path: '/easyaccounts',
     soon: true,
     cat: 'Finance',
     desc: 'Full accounts payable and receivable management.',
@@ -110,7 +145,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyInventory',
-    path: '/easyinventory',            // ✅ internal coming soon
+    path: '/easyinventory',
     soon: true,
     cat: 'Inventory',
     desc: 'Real-time stock control across warehouses and branches.',
@@ -121,7 +156,7 @@ const PRODUCTS: Product[] = [
     accent: '#4ade80',
   },
   {
-    name: 'EasyResturant',             // ✅ matches exact spelling in ProductsDropdown
+    name: 'EasyResturant',
     path: '/easyresturant',
     soon: true,
     cat: 'F&B',
@@ -134,7 +169,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyLMS',
-    path: '/easylms',                  // ✅ internal coming soon
+    path: '/easylms',
     soon: true,
     cat: 'EdTech',
     desc: 'Learning management for employee training and development.',
@@ -154,7 +189,6 @@ const fadeUp = (delay = 0) => ({
   transition: { duration: 0.55, delay, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] },
 })
 
-// ─── Main Component ───────────────────────────────────────────────────────────
 export default function ProductsSection() {
   const [activeFilter, setActiveFilter] = useState<Filter>('all')
   const [selected, setSelected] = useState<Product | null>(null)
@@ -165,7 +199,6 @@ export default function ProductsSection() {
     return true
   })
 
-  // ✅ Navigate correctly — external URLs open in new tab, internal use router
   const handleExplore = (product: Product) => {
     if (product.path.startsWith('http')) {
       window.open(product.path, '_blank', 'noopener noreferrer')
@@ -176,8 +209,6 @@ export default function ProductsSection() {
 
   return (
     <section className="py-20 bg-[#0c2501] min-h-screen">
-
-      {/* Dot grid */}
       <div
         className="fixed inset-0 opacity-[0.04] pointer-events-none"
         style={{
@@ -188,30 +219,20 @@ export default function ProductsSection() {
 
       <div className="relative max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
 
-        {/* ── Header ── */}
+        {/* Header */}
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-6 mb-12">
           <div>
-            <motion.p
-              {...fadeUp(0)}
-              className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#81fa00] mb-3"
-            >
+            <motion.p {...fadeUp(0)} className="text-[11px] font-bold uppercase tracking-[0.25em] text-[#81fa00] mb-3">
               Our Suite
             </motion.p>
-            <motion.h2
-              {...fadeUp(0.07)}
-              className="text-3xl md:text-4xl font-black text-white leading-tight"
-            >
+            <motion.h2 {...fadeUp(0.07)} className="text-3xl md:text-4xl font-black text-white leading-tight">
               Easy Products
             </motion.h2>
-            <motion.p
-              {...fadeUp(0.12)}
-              className="text-gray-500 text-sm mt-2 max-w-xs leading-relaxed"
-            >
+            <motion.p {...fadeUp(0.12)} className="text-gray-500 text-sm mt-2 max-w-xs leading-relaxed">
               A growing suite of business tools built for modern teams.
             </motion.p>
           </div>
 
-          {/* Filters */}
           <motion.div {...fadeUp(0.15)} className="flex items-center gap-2 flex-wrap">
             {(['all', 'live', 'soon'] as Filter[]).map(f => (
               <button
@@ -232,11 +253,8 @@ export default function ProductsSection() {
           </motion.div>
         </div>
 
-        {/* ── Grid ── */}
-        <motion.div
-          layout
-          className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4"
-        >
+        {/* Grid */}
+        <motion.div layout className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4">
           <AnimatePresence mode="popLayout">
             {filtered.map((product, i) => {
               const Icon = product.icon
@@ -252,30 +270,22 @@ export default function ProductsSection() {
                   onClick={() => setSelected(product)}
                   className="group relative bg-[#0F2318] rounded-2xl border border-[#81fa00]/10 hover:border-[#81fa00]/30 cursor-pointer transition-all duration-300 overflow-hidden flex flex-col"
                 >
-                  {/* Top accent line */}
                   <div
                     className="absolute top-0 left-0 right-0 h-[2px] scale-x-0 group-hover:scale-x-100 transition-transform duration-300 origin-left"
                     style={{ backgroundColor: product.accent }}
                   />
-
-                  {/* Corner glow */}
                   <div
                     className="absolute top-0 right-0 w-20 h-20 rounded-full blur-[30px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
                     style={{ backgroundColor: `${product.accent}18` }}
                   />
 
-                  {/* Top row: icon + badge */}
                   <div className="flex items-start justify-between p-5 pb-0">
                     <div
                       className="w-10 h-10 rounded-xl flex items-center justify-center flex-shrink-0"
-                      style={{
-                        backgroundColor: `${product.accent}12`,
-                        border: `1px solid ${product.accent}25`,
-                      }}
+                      style={{ backgroundColor: `${product.accent}12`, border: `1px solid ${product.accent}25` }}
                     >
                       <Icon size={18} strokeWidth={1.5} style={{ color: product.accent }} />
                     </div>
-
                     {product.soon ? (
                       <span className="px-2.5 py-1 rounded-full text-[9px] font-black uppercase tracking-widest bg-[#81fa00]/8 text-[#81fa00]/60 border border-[#81fa00]/15">
                         Soon
@@ -288,22 +298,16 @@ export default function ProductsSection() {
                     )}
                   </div>
 
-                  {/* Body */}
                   <div className="flex-1 p-5 pt-4">
                     <h3 className="text-white font-black text-base mb-1.5 leading-snug">{product.name}</h3>
                     <p className="text-gray-400 py-2 text-xs leading-relaxed">{product.desc}</p>
                   </div>
 
-                  {/* Footer */}
                   <div className="flex items-center justify-between px-5 py-3.5 border-t border-[#81fa00]/6">
                     <span className="text-[10px] text-gray-600 uppercase tracking-[0.1em] font-semibold">{product.cat}</span>
                     <div
                       className="w-6 h-6 rounded-full border flex items-center justify-center transition-all duration-200 group-hover:scale-110"
-                      style={{
-                        borderColor: `${product.accent}30`,
-                        color: product.accent,
-                        backgroundColor: `${product.accent}08`,
-                      }}
+                      style={{ borderColor: `${product.accent}30`, color: product.accent, backgroundColor: `${product.accent}08` }}
                     >
                       <ArrowRight size={11} strokeWidth={2.5} />
                     </div>
@@ -314,7 +318,6 @@ export default function ProductsSection() {
           </AnimatePresence>
         </motion.div>
 
-        {/* Empty state */}
         {filtered.length === 0 && (
           <div className="text-center py-20">
             <p className="text-gray-700 text-sm">No products match this filter.</p>
@@ -322,7 +325,7 @@ export default function ProductsSection() {
         )}
       </div>
 
-      {/* ── Modal ── */}
+      {/* Modal */}
       <AnimatePresence>
         {selected && (
           <motion.div
@@ -341,29 +344,22 @@ export default function ProductsSection() {
               transition={{ duration: 0.35, ease: [0.22, 1, 0.36, 1] as [number, number, number, number] }}
               className="relative w-full max-w-md rounded-3xl border border-[#81fa00]/15 overflow-hidden bg-[#0F2318]"
             >
-              {/* Top glow */}
               <div
                 className="absolute top-0 left-0 right-0 h-40 pointer-events-none"
                 style={{ background: 'radial-gradient(ellipse at 50% -20%, rgba(129,250,0,0.12), transparent 70%)' }}
               />
 
-              {/* Header */}
               <div className="relative flex items-center gap-3 p-6 border-b border-[#81fa00]/8">
                 <div
                   className="w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0"
-                  style={{
-                    backgroundColor: `${selected.accent}12`,
-                    border: `1px solid ${selected.accent}25`,
-                  }}
+                  style={{ backgroundColor: `${selected.accent}12`, border: `1px solid ${selected.accent}25` }}
                 >
                   <selected.icon size={22} strokeWidth={1.5} style={{ color: selected.accent }} />
                 </div>
-
                 <div className="flex-1 min-w-0">
                   <p className="text-white font-black text-base leading-none mb-1">{selected.name}</p>
                   <p className="text-gray-600 text-xs">{selected.cat}</p>
                 </div>
-
                 {selected.soon ? (
                   <span className="px-3 py-1 rounded-full text-[10px] font-black uppercase tracking-wider bg-[#81fa00]/8 text-[#81fa00]/60 border border-[#81fa00]/15">
                     Coming Soon
@@ -374,7 +370,6 @@ export default function ProductsSection() {
                     Live
                   </span>
                 )}
-
                 <button
                   onClick={() => setSelected(null)}
                   className="w-8 h-8 rounded-full border border-[#81fa00]/15 flex items-center justify-center text-gray-600 hover:text-white hover:border-[#81fa00]/30 hover:bg-[#81fa00]/8 transition-all duration-200 flex-shrink-0"
@@ -383,27 +378,17 @@ export default function ProductsSection() {
                 </button>
               </div>
 
-              {/* Body */}
               <div className="relative p-6 space-y-5">
                 <p className="text-gray-400 text-sm leading-relaxed">{selected.long}</p>
-
-                {/* Tags */}
                 <div className="flex flex-wrap gap-2">
                   {selected.tags.map(tag => (
-                    <span
-                      key={tag}
-                      className="px-3 py-1 rounded-full text-[11px] font-semibold text-[#81fa00]/60 border border-[#81fa00]/10 bg-[#81fa00]/4"
-                    >
+                    <span key={tag} className="px-3 py-1 rounded-full text-[11px] font-semibold text-[#81fa00]/60 border border-[#81fa00]/10 bg-[#81fa00]/4">
                       {tag}
                     </span>
                   ))}
                 </div>
-
-                {/* Features */}
                 <div className="bg-[#0c2501] rounded-2xl p-4 border border-[#81fa00]/8">
-                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#81fa00]/40 mb-3">
-                    Key Features
-                  </p>
+                  <p className="text-[10px] font-black uppercase tracking-[0.2em] text-[#81fa00]/40 mb-3">Key Features</p>
                   <div className="space-y-2.5">
                     {selected.results.map(r => (
                       <div key={r} className="flex items-center gap-2.5">
@@ -415,29 +400,24 @@ export default function ProductsSection() {
                     ))}
                   </div>
                 </div>
-
-                {/* CTAs */}
                 <div className="flex gap-3 pt-1">
                   {selected.soon ? (
                     <button className="flex-1 px-5 py-3 rounded-full text-sm font-bold border border-[#81fa00]/15 text-gray-500 hover:text-[#81fa00] hover:border-[#81fa00]/30 transition-all duration-200">
-                      Notify Me
+                      Coming soon ...
                     </button>
                   ) : (
                     <>
-                      {/* ✅ Only render the Explore button if path exists */}
                       {selected.path && (
                         <button
                           onClick={() => handleExplore(selected)}
                           className="flex-1 inline-flex items-center justify-center gap-2 px-5 py-3 rounded-full text-sm font-black text-black bg-[#81fa00] hover:bg-[#a3e635] transition-all duration-200"
                           style={{ boxShadow: '0 0 24px rgba(129,250,0,0.25)' }}
                         >
-                          Explore {selected.name}
+                          Visit {selected.name}
                           <ArrowRight size={14} />
                         </button>
                       )}
-                      <button className="px-5 py-3 rounded-full text-sm font-bold border border-[#81fa00]/15 text-gray-500 hover:text-[#81fa00] hover:border-[#81fa00]/30 transition-all duration-200">
-                        Docs
-                      </button>
+
                     </>
                   )}
                 </div>

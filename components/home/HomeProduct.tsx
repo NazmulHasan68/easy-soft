@@ -6,6 +6,9 @@ import {
   LayoutDashboard, BookOpen, ShoppingCart, Receipt,
   Package, Utensils, Users, Building2, BarChart2,
   GraduationCap, ArrowRight, X, Check, Stethoscope,
+  Home,
+  Heart,
+  Store,
 } from 'lucide-react'
 
 // ─── Types ───────────────────────────────────────────────────────────────────
@@ -26,7 +29,7 @@ interface Product {
 const PRODUCTS: Product[] = [
   {
     name: 'EasyAnaly AI',
-    path: 'https://p1.easy-soft.co/',  // ✅ external live URL
+    path: 'https://p1.easy-soft.co/',
     soon: false,
     cat: 'Analytics',
     desc: 'AI-powered insights and dashboards for your business data.',
@@ -38,7 +41,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyClinic',
-    path: 'https://p2.easy-soft.co/',  // ✅ new product added
+    path: 'https://p2.easy-soft.co/',
     soon: false,
     cat: 'Healthcare',
     desc: 'Complete clinic and patient management for modern practices.',
@@ -50,7 +53,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyManager',
-    path: 'https://p3.easy-soft.co/',  // ✅ external live URL
+    path: 'https://p3.easy-soft.co/',
     soon: false,
     cat: 'Management',
     desc: 'All-in-one business manager for teams and operations.',
@@ -62,7 +65,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyPOS',
-    path: 'https://p4.easy-soft.co/',  // ✅ external live URL
+    path: 'https://p4.easy-soft.co/',
     soon: false,
     cat: 'Retail',
     desc: 'Fast, reliable point-of-sale for retail and service businesses.',
@@ -74,7 +77,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyHRM',
-    path: 'https://p5.easy-soft.co/',  // ✅ external live URL
+    path: 'https://p5.easy-soft.co/',
     soon: false,
     cat: 'HR',
     desc: 'Payroll, attendance, and employee records simplified.',
@@ -84,9 +87,48 @@ const PRODUCTS: Product[] = [
     icon: Users,
     accent: '#81fa00',
   },
+  // ✅ NEW — AbashonX
+  {
+    name: 'AbashonX',
+    path: 'https://rental-dashboard-pi.vercel.app/login',
+    soon: false,
+    cat: 'Real Estate',
+    desc: 'Smart rental and property management for landlords and agencies.',
+    long: 'AbashonX simplifies property listings, tenant management, rent collection, and maintenance requests — all in one place for modern property managers.',
+    tags: ['Rental', 'Property', 'Tenants'],
+    results: ['Tenant portal', 'Rent collection', 'Maintenance tracking'],
+    icon: Home,
+    accent: '#4ade80',
+  },
+  // ✅ NEW — ShomporkoX
+  {
+    name: 'ShomporkoX',
+    path: 'https://shomporkox.easytechsolutions.xyz/',
+    soon: false,
+    cat: 'CRM',
+    desc: 'Lead management and customer relationship platform.',
+    long: 'ShomporkoX helps your sales team track leads, manage pipelines, and nurture customer relationships to close deals faster and smarter.',
+    tags: ['CRM', 'Leads', 'Pipeline'],
+    results: ['Lead tracking', 'Pipeline management', 'Follow-up reminders'],
+    icon: Heart,
+    accent: '#a3e635',
+  },
+  // ✅ NEW — DokanX
+  {
+    name: 'DokanX',
+    path: 'https://dokanxbd.com/',
+    soon: false,
+    cat: 'E-Commerce',
+    desc: 'Complete e-commerce solution for Bangladeshi businesses.',
+    long: 'DokanX provides everything you need to sell online — product listings, order management, delivery tracking, and payment processing in one platform.',
+    tags: ['E-Commerce', 'Orders', 'Payments'],
+    results: ['Product catalog', 'Order management', 'Delivery tracking'],
+    icon: Store,
+    accent: '#81fa00',
+  },
   {
     name: 'EasyLedger',
-    path: '/easylead',                 // ✅ internal coming soon
+    path: '/easylead',
     soon: true,
     cat: 'Finance',
     desc: 'Modern ledger and bookkeeping for growing businesses.',
@@ -98,7 +140,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyAccounts',
-    path: '/easyaccounts',             // ✅ internal coming soon
+    path: '/easyaccounts',
     soon: true,
     cat: 'Finance',
     desc: 'Full accounts payable and receivable management.',
@@ -110,7 +152,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyInventory',
-    path: '/easyinventory',            // ✅ internal coming soon
+    path: '/easyinventory',
     soon: true,
     cat: 'Inventory',
     desc: 'Real-time stock control across warehouses and branches.',
@@ -121,7 +163,7 @@ const PRODUCTS: Product[] = [
     accent: '#4ade80',
   },
   {
-    name: 'EasyResturant',             // ✅ matches exact spelling in ProductsDropdown
+    name: 'EasyResturant',
     path: '/easyresturant',
     soon: true,
     cat: 'F&B',
@@ -134,7 +176,7 @@ const PRODUCTS: Product[] = [
   },
   {
     name: 'EasyLMS',
-    path: '/easylms',                  // ✅ internal coming soon
+    path: '/easylms',
     soon: true,
     cat: 'EdTech',
     desc: 'Learning management for employee training and development.',

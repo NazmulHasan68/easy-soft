@@ -16,7 +16,7 @@ const ProductsDropdown = [
   { name: "EasyPOS", path: "https://p4.easy-soft.co/", comingSoon: false },
   { name: "EasyHRM", path: "https://p5.easy-soft.co/", comingSoon: false },
   { name: "AbashonX", path: "https://rental-dashboard-pi.vercel.app/login", comingSoon: false },
-  { name: "ShomporkoX", path: "https://easytechsolutions.xyz/easy_data/easy_lead_management", comingSoon: false },
+  { name: "ShomporkoX", path: "https://shomporkox.easytechsolutions.xyz/", comingSoon: false },
   { name: "DokanX", path: "https://dokanxbd.com/", comingSoon: false },
   { name: "EasyLedger", path: "/easylead", comingSoon: true },
   { name: "EasyAccounts", path: "/easyaccounts", comingSoon: true },
