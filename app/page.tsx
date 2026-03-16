@@ -23,8 +23,8 @@ import HomeTestimonialSection from '@/components/home/HomeTestimonialSection';
 export default function HomePage() {
   return (
     <div className="bg-[#f2f2f2] dark:bg-[#0c2501]">
-
-      <HomeHero2/>
+{/* 
+      <HomeHero2/> */}
 
       <HomeHero/>
 
