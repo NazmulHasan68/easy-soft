@@ -15,11 +15,15 @@ const ProductsDropdown = [
   { name: "EasyManager", path: "https://p3.easy-soft.co/", comingSoon: false },
   { name: "EasyPOS", path: "https://p4.easy-soft.co/", comingSoon: false },
   { name: "EasyHRM", path: "https://p5.easy-soft.co/", comingSoon: false },
+  { name: "AbashonX", path: "https://rental-dashboard-pi.vercel.app/login", comingSoon: false },
+  { name: "ShomporkoX", path: "https://easytechsolutions.xyz/easy_data/easy_lead_management", comingSoon: false },
+  { name: "DokanX", path: "https://dokanxbd.com/", comingSoon: false },
   { name: "EasyLedger", path: "/easylead", comingSoon: true },
   { name: "EasyAccounts", path: "/easyaccounts", comingSoon: true },
   { name: "EasyInventory", path: "/easyinventory", comingSoon: true },
   { name: "EasyResturant", path: "/easyresturant", comingSoon: true },
   { name: "EasyLMS", path: "/easylms", comingSoon: true },
+  
 ]
 
 // Navigation Links
