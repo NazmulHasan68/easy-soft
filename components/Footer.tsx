@@ -15,7 +15,6 @@ const footerLinks = {
     { label: 'About Us', href: '/about' },
     { label: 'Services', href: '/services' },
     { label: 'Projects', href: '/projects' },
-    { label: 'Products', href: '/products' },
     { label: 'Contact',  href: '/contact' },
   ],
   Services: [
@@ -26,10 +25,10 @@ const footerLinks = {
     { label: 'UI/UX Design',               href: '/services' },
   ],
   Legal: [
-    { label: 'Terms & Conditions', href: '#' },
-    { label: 'Privacy Policy',     href: '#' },
-    { label: 'Refund Policy',      href: '#' },
-    { label: 'Cookie Policy',      href: '#' },
+    { label: 'Terms & Conditions', href: '/terms' },
+    { label: 'Privacy Policy',     href: '/privacy' },
+    { label: 'Refund Policy',      href: '/refund' },
+    { label: 'Cookie Policy',      href: '/cookies' },
   ],
 }
 
