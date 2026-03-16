@@ -106,16 +106,16 @@ export default function Footer() {
             <div className="relative flex items-center gap-3 flex-shrink-0">
               <Link
                 href="/contact"
-                className="inline-flex items-center gap-2 px-6 py-3 bg-[#81fa00] hover:bg-[#a3e635] text-black font-black text-sm rounded-full transition-all duration-200"
+                className="inline-flex items-center gap-2 px-3 md:px-6 py-3 bg-[#81fa00] hover:bg-[#a3e635] text-black font-black text-sm rounded-full transition-all duration-200"
                 style={{ boxShadow: '0 0 28px rgba(129,250,0,0.22)' }}
               >
                 Get in Touch <ArrowRight size={14} />
               </Link>
               <Link
-                href="/products"
-                className="inline-flex items-center gap-2 px-6 py-3 border border-[#81fa00]/20 text-[#81fa00]/70 hover:text-[#81fa00] hover:border-[#81fa00]/40 font-bold text-sm rounded-full transition-all duration-200"
+                href="/services"
+                className="inline-flex items-center gap-2 px-3 md:px-6 py-3 border border-[#81fa00]/20 text-[#81fa00]/70 hover:text-[#81fa00] hover:border-[#81fa00]/40 font-bold text-sm rounded-full transition-all duration-200"
               >
-                Our Products
+                Our Services
               </Link>
             </div>
           </div>
