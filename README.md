@@ -7,7 +7,7 @@ A modern Next.js 14 website for EasySoft, a software development agency. Built w
 ## 🚀 Quick Start 
 
 ### Prerequisites
-- Node.js 18+
+- Node.js 18+. 
 - npm or yarn. 
 
 ### Installation 
