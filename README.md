@@ -11,7 +11,7 @@ A modern Next.js 14 website for EasySoft, a software development agency. Built w
 - npm or yarn. 
 .. 
 
-
+. 
 
 ### Installation 
 
