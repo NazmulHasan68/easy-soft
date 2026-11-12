@@ -3,8 +3,7 @@
 A modern Next.js 14 website for EasySoft, a software development agency. Built with React, TypeScript, Tailwind CSS, and Framer Motion.
 
 ---
-......... 
-.
+.........m
 ## 🚀 Quick Start 
 
 ### Prerequisite.. 
